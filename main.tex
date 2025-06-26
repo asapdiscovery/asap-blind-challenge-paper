@@ -9,6 +9,7 @@
 \usepackage{natbib}
 \usepackage[newfloat]{minted}
 \usepackage{multirow}
+\usepackage{verbatim}
 
 \externaldocument{SI}
 % \input{SI.tex}
@@ -21,7 +22,9 @@
 %% Meta-data block
 %% ---------------
 %% Each author should be given as a separate \author command.
-%% Valence / Polaris 
+
+%% Main manuscript contributors
+
 \author{Hugo MacDermott-Opeskin}
 \affiliation{Open Molecular Software Foundation, Davis CA, USA}
 \author{Jenke Scheen}
@@ -39,6 +42,54 @@
 \altaffiliation{Tri-Institutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
 \author{Maria A Castellanos}
 \affiliation{Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+\author{Sean Colby}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+
+%% ASAP %%
+\author{Edward Griffen}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{David Cousins}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{Jessica Stacey}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{Jasmin Cara Aschenbrenner}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Daren Fearon}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Blake Balcomb}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Peter Marples}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Charles W.E. Tomlinson}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Ryan Lithgo}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Max Winokan}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Haim Barr}
+\affiliation{Weizmann Institute of Science, Rehovot, IL}
+\author{Noa Lahav}
+\affiliation{Weizmann Institute of Science, Rehovot, IL}
+\author{Gwendolyn Fate}
+\affiliation{Thames Pharma Partners, USA}
+\author{Bruce Lefker}
+\affiliation{Thames Pharma Partners, USA}
+\author{Ralph Robinson}
+\affiliation{Thames Pharma Partners, USA}
+\author{Tamas Szommer}
+\affiliation{Centre for Medicines Discovery, Oxford, UK}
+\author{Nick Lynch}
+\affiliation{Curlew Research, UK}
+
+%% OpenADMET
+\author{Ryan Renslow}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Mallory Tollefson}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Cynthia Xu}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+
+%% Valence 
 \author{Jonny Hsu}
 \affiliation{Valence Labs, Montréal, Québec, Canada}
 \altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
@@ -54,16 +105,33 @@
 \author{Lu Zhu}
 \affiliation{Valence Labs, Montréal, Québec, Canada}
 \altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
-\author{A whole bunch of ASAP people}
-\affiliation{ASAP' author list: SI 2}
-\author{A whole bunch of OpenADMET People}
-\affiliation{ASAP' author list: SI 3}
+
+
+%% Participants
 \author{A whole bunch of participants}
-\affiliation{Participants' author list: SI 1}
-\author{Externals}
-\affiliation{Elsewhere}
-\author{PIs?}
-\affiliation{In charge}
+\affiliation{Participants' affiliations}
+
+
+%% ASAP PIs
+\author{Frank von Delft}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Alpha Lee}
+\affiliation{PostEra, Cambridge, MA, USA}
+\author{Karla Kirkegaard}
+\affiliation{Stanford University School of Medicine: Stanford, CA, US}
+\author{Peter Sjö}
+\affiliation{Drugs for Neglected Diseases initiative: Geneva, Genève, CH}
+
+%% OpenADMET PIs
+\author{Sri Kosuri} 
+\affiliation{Octant Inc: Emeryville, CA, US}
+
+\author{James S. Fraser}
+\affiliation{University of California San Francisco, San Francisco, CA, USA}
+
+%% John as final as PI across both
+\author{John D. Chodera}
+\affiliation{Memorial Sloan Kettering Cancer Center, New York, NY, USA}
 
 \email{*jenke.scheen@omsf.io}
 
@@ -106,12 +174,12 @@ Running a computational blind challenge requires significant community engagemen
 
 
 %% QUICK DESCRIPTION OF WHAT DATA WAS IN THE CHALLENGE
-The dataset used in the challenge primarily consisted of real-world lead optimization (leadopt) data, selected to mirror the challenges faced by ASAP during its own leadopt campaign. To this end, three \textit{sub-challenges} were designed in three modalities common to drug discovery: 1) crystallographic ligand pose prediction, 2) biochemical potency prediction, and 3) ADMET endpoint prediction (figure \ref{fgr:datasets_overview}).
+The dataset used in the challenge primarily consisted of real-world lead optimization (leadopt) data, selected to mirror the challenges faced by ASAP during its own leadopt campaign. To this end, three \textit{subchallenges} were designed in three modalities common to drug discovery: 1) crystallographic ligand pose prediction, 2) biochemical potency prediction, and 3) ADMET endpoint prediction (figure \ref{fgr:datasets_overview}).
 
 
 \begin{figure}
     \includegraphics[scale=0.5]{01_figs_introduction/datasets_overview.png}
-  \caption{Sizes of the datasets presented in this blind challenge across the different sub-challenges. Training sets are shown as blue bars and test sets as orange bars with the total number of measurements annotated at the top of each bar. For the ligand posing sub-challenge, \textbf{M} and \textbf{S} signify \textit{MERS-CoV Mpro} and \textit{SARS-CoV-2 Mpro} respectively. }
+  \caption{Sizes of the datasets presented in this blind challenge across the different subchallenges. Training sets are shown as blue bars and test sets as orange bars with the total number of measurements annotated at the top of each bar. For the ligand posing subchallenge, \textbf{M} and \textbf{S} signify \textit{MERS-CoV Mpro} and \textit{SARS-CoV-2 Mpro} respectively. }
   \label{fgr:datasets_overview}
 \end{figure}
 
@@ -128,7 +196,7 @@ The paper is organized as follows: we begin by describing the platform and overa
 
 \subsection{Polaris provides a robust platform for benchmarking}
 
- Polaris provides a Python API-based platform to enable easy access to drug discovery datasets and benchmarks. Serving as a single source of truth, Polaris enables access to ML-ready datasets and reproducible benchmarking\cite{Polaris_website, wognum_call_2024}. By enabling direct benchmark comparisons and minimizing the risk of data mishandling affecting results, modeling strategies can be evaluated consistently over time. Relative to similar platforms such as Kaggle (kaggle.com), Polaris natively supports key modalities in drug discovery--including small molecules, proteins, and multi-omics data--and is designed with best practices tailored to each. Polaris' support for multiple drug discovery relevant modalities was critical for the multi-modal nature of the challenge.  Additionally, Polaris draws on the deep expertise of its advisory board, comprised of academic and industry leaders, to apply best practices in model evaluation and benchmarking\cite{ash_practically_2024}, which were employed throughout the challenge. Open, real-world benchmarks hosted on Polaris contribute to trust in computational methods for drug discovery.
+ Polaris provides a Python application programming interface (API)-based platform to enable easy access to drug discovery datasets and benchmarks. Serving as a single source of truth, Polaris enables access to ML-ready datasets and reproducible benchmarking\cite{Polaris_website, wognum_call_2024}. By enabling direct benchmark comparisons and minimizing the risk of data mishandling affecting results, modeling strategies can be evaluated consistently over time. Relative to similar platforms such as Kaggle (kaggle.com), Polaris natively supports key modalities in drug discovery--including small molecules, proteins, and multi-omics data--and is designed with best practices tailored to each. Polaris' support for multiple drug discovery relevant modalities was critical for the multi-modal nature of the challenge.  Additionally, Polaris draws on the deep expertise of its advisory board, comprised of academic and industry leaders, to apply best practices in model evaluation and benchmarking\cite{ash_practically_2024}, which were employed throughout the challenge. Open, real-world benchmarks hosted on Polaris contribute to trust in computational methods for drug discovery.
 
 \subsection{Engaging the community}
 
@@ -170,10 +238,10 @@ ADMET data was collected on an ADMET panel from Bienta, a bioassay contract rese
 
 \begin{table}[ht]
 \centering
-\caption{Summary of Endpoints by sub-challenge}
+\caption{Summary of Endpoints by subchallenge}
 \begin{tabular}{|l|l|l|}
 \hline
-\textbf{sub-challenge} & \textbf{Endpoint} & \textbf{Units} \\
+\textbf{subchallenge} & \textbf{Endpoint} & \textbf{Units} \\
 \hline
 \multirow{2}{*}{Potency} 
 & SARS-CoV-2 Mpro pIC50 & unitless (log scale) \\
@@ -197,18 +265,17 @@ ADMET data was collected on an ADMET panel from Bienta, a bioassay contract rese
 
 Data was collated from ASAP’s Collaborative Drug Discovery (CDD, collaborativedrug.com) vault, a research informatics database platform that aggregates assay outcomes by molecule. Data was split into a training set that was released to participants and a blind test set that participants were evaluated on. A target 75:25 train:test split was selected for the ADMET and potency prediction challenges, while for the pose prediction challenge data from the COVID Moonshot\cite{boby_2023} (also solved by X-ray crystallography at Diamond Light Source) was used as the training set totaling 770 structures for SARS-CoV-2 Mpro only, while the test set comprised 98 SARS-CoV-2 Mpro structures and 97 MERS-CoV Mpro structures from the ASAP Discovery Consortium (See Figure \ref{fgr:datasets_overview}).  
 
-For the ADMET and potency sub-challenges we used a temporal split of the data to create a challenge more representative of real-world drug discovery, where molecules must be evaluated prospectively\cite{sheridan_time-split_2013}. However, this had to be balanced against minimization of leakage between endpoints which could jeopardize competition integrity by revealing test set molecules to participants in the training set of other endpoints. This was particularly challenging for the ADMET sub-challenge in which several endpoints have limited amounts of data, meaning that a multi-endpoint, multi-sub-challenge split had to be carefully designed to minimize leakage between endpoints and sub-challenges. 
+For the ADMET and potency subchallenges we used a temporal split of the data to create a challenge more representative of real-world drug discovery, where molecules must be evaluated prospectively\cite{sheridan_time-split_2013}. However, this had to be balanced against minimization of leakage between endpoints, which could jeopardize competition integrity by revealing test set molecules to participants in the training set of other endpoints. This was particularly challenging for the ADMET subchallenge, in which several endpoints have limited amounts of data, meaning that a multi-endpoint, multi-subchallenge split had to be carefully designed to minimize leakage between endpoints and subchallenges. 
 
-To balance these competing concerns, the following hybrid splitting procedure was followed for the ADMET and potency sub-challenges. First, all molecules in common between both the ADMET and potency sub-challenge were determined (N=197 in raw data package). The split for each endpoint that minimizes leakage across all endpoints and datasets will contain as many of the shared molecules as possible in the \textbf{test set} such that the test set can "hold out" as many structures as possible across the totality of compounds. For the potency sub-challenge, this was achieved by first placing the common molecules in the test set and then adding remaining molecules newest-first by MERS Mpro potency assay date to the test such such that the test set is biased towards newer compounds (simulated time based split). This split (common augmented with MERS Mpro date-ordered) was then used to also split the SARS-CoV-2 data.   MERS Mpro potency assay date was chosen to bias the time based element of the split as generally speaking MERS Mpro assays were enabled after SARS-CoV-2 Mpro assays, providing a better bias towards newer compounds. Note that in this splitting procedure, tradeoff between leakage and split ratios results in the elimination of leakage \textit{within the potency challenge} but with some variation in the exact 75:25 train-test split ratio by endpoint (SARS-CoV-2 Mpro pIC50 vs MERS Mpro pIC50). Overall this procedure can be thought of as a leakage minimizing date-biased split for a single endpoint (e.g MERS-CoV Mpro pIC50) with the other endpoint(s) split using the same indices.
+To balance these competing concerns, the following hybrid splitting procedure was followed for the ADMET and potency subchallenges. First, all molecules in common between both the ADMET and potency subchallenge were determined (N=197). The split for each endpoint that minimizes leakage across all endpoints and datasets will contain as many of the shared molecules as possible in the \textbf{test set} such that the test set can "hold out" as many structures as possible across the totality of compounds. For the potency subchallenge, this was achieved by first placing the common molecules in the test set and then adding remaining molecules newest-first by MERS-CoV Mpro potency assay date to the test set such such that the test set is biased towards newer compounds (simulated time based split). This split (common augmented with MERS-CoV Mpro date-ordered) was then used to split the SARS-CoV-2 data. MERS-CoV Mpro potency assay date was chosen to bias the time based element of the split as, generally speaking, MERS-CoV Mpro assays were enabled after SARS-CoV-2 Mpro assays, providing a better bias towards newer compounds. Note that in this splitting procedure, tradeoff between leakage and split ratios results in the elimination of leakage \textit{within the potency challenge}, but with some variation in the exact 75:25 train-test split ratio by endpoint (SARS-CoV-2 Mpro pIC50 vs MERS-CoV Mpro pIC50). Overall this procedure can be thought of as a leakage-minimizing, date-biased split for a single endpoint (e.g MERS-CoV Mpro pIC50), with the other endpoint(s) split using the same indices.
 
-For the ADMET sub-challenge a similar procedure was followed, however the number of common molecules that would need to be placed in the test set exceeds the 75:25 train-test ratio for some endpoints (Figure \ref{fgr:datasets_overview}). To minimize the impact of this while still biasing by date, the common molecules were ordered by LogD assay date and molecules selected to satisfy a 75:25 train test split. The LogD time-based split was used to also split the other endpoints such that a consistent split was shared by the ADMET endpoints, eliminating between-endpoint leakage \textit{within the ADMET sub-challenge} and biasing by date while also maximizing the number of common molecules held out between the potency and ADMET sets. Given the dataset sizes and extent of overlap there is an unavoidable ~70 compounds leak between the ADMET training set and potency test set (common molecules that were not be placed in the ADMET test set). However this between-endpoint leakage is not expected to provide significant information gain to the participants given that the leaked subset cannot be known \textit{a-priori}.
+A similar procedure was followed for the ADMET subchallenge, however the number of common molecules that would need to be placed in the test set grossly exceeds the 75:25 train-test ratio for some endpoints (Figure \ref{fgr:datasets_overview}). To minimize the impact of this while still biasing by date, the common molecules were ordered by LogD assay date and selected to satisfy a 75:25 train test split. The LogD time-based split was used to also split the other endpoints such that a consistent split was shared by the ADMET endpoints, eliminating between-endpoint leakage \textit{within the ADMET subchallenge} and biasing by date while also maximizing the number of common molecules held out between the potency and ADMET sets. Given the dataset sizes and extent of overlap there is an unavoidable ~70 compounds leak between the ADMET training set and potency test set (common molecules that were not be placed in the ADMET test set). However this between-endpoint leakage is not expected to provide significant information gain to the participants given that the leaked subset cannot be known \textit{a-priori}.
 
-Following splitting, the data was cleaned to be ML-ready. Compounds marked as below or above assay detectable range with a ChEMBL style modifier ( $<$, $<=$, $>=$, $>$) were removed. Duplicate molecules were removed, with some missed on an an initial pass and removed following detection on by participants. Where a molecule had data recorded for an endpoint more than once, the most recent data collection was selected. The final ML-ready datasets for ADMET and potency were organized as a multitask matrix and uploaded to the Polaris platform. Datasets with out of range datapoints and some additional endpoint-specific assay data was made available for the participants in case they wanted to leverage the additional negative data in their models. The final ML-ready datasets were uploaded to the Polaris platform, with each sub-challenge represented as a multitask matrix where appropriate. See Figure \ref{fgr:datasets_overview} for an overview of the datasets available. 
-
+The data was then cleaned to be ML-ready according to the following steps. Compounds marked as below or above assay detectable range with a ChEMBL\cite{zdrazil_2024_chembl}-style modifier (i.e., $<$, $<=$, $>=$, $>$) were removed. Duplicate molecules were removed, with some missed on an an initial pass and removed following detection on by participants. Where a molecule had data recorded for an endpoint more than once, the most recent data collection was selected. Datasets with out-of-range datapoints and some additional endpoint-specific assay data were made available for the participants in case they wanted to leverage the additional negative data in their models. The final ML-ready datasets were uploaded to the Polaris platform, with each subchallenge represented as a multitask matrix. See Figure \ref{fgr:datasets_overview} for an overview of the datasets available. 
 
 \subsection{Running the challenge on the Polaris platform}
 
-Participants uploaded their predictions to the Polaris platform via the API over the course of the challenge. Example Python code detailing how participants were expected to submit their predictions is shown in Listing \ref{code:submission}. This provides significant operational advantages relative to modes of running other challenges, which include large amounts of manual data handling. A consistent pythonic API also allows participants to co-locate their modeling efforts with submission to the challenge infrastructure e.g in a Jupyter notebook, enhancing reproducibility.
+Participants uploaded their predictions to the Polaris platform via the API over the course of the challenge. Example Python code detailing how participants were expected to submit their predictions is shown in Listing \ref{code:submission}. This provides significant operational advantages relative to modes of running other challenges, which include large amounts of manual data handling. A consistent Pythonic API also allows participants to colocate their modeling efforts with submission to the challenge infrastructure, e.g. in a Jupyter notebook\cite{kluyver_2016_jupyter}, enhancing reproducibility.
 
 \begin{code}
 \setminted{baselinestretch=0.5} % decreases vertical spacing between lines
@@ -235,30 +302,30 @@ competition.submit_predictions(
 \end{code}
 
 
-To enable participants to easily use the Polaris challenge infrastructure, we provided participants example notebooks with baselines to demonstrate how to submit to each of the sub-challenges. These were made available on GitHub at the following location: https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples. 
+To enable participants to easily use the Polaris challenge infrastructure, we provided example notebooks with baseline models to demonstrate how to submit to each of the subchallenges (see Evaluation Procedure). These were made available on GitHub (https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples). 
 
-While evaluation of tabular data submissions for the potency and ADMET subchallenges did not provide technical challenges, the ligand pose subchallenge proved to be more complex. Due to technical constraints, we could not store and evaluate submissions of full protein-ligand structures for each molecule for each participant. Instead the participants were required to submit a serialized RDKit molecule of the ligand only, pre-aligned to a reference structure. While circumventing technical issues, this solution did rely on participants correctly aligning their results with the reference structure, which proved challenging for some submissions (see Challenge Outcomes).
+While evaluation of tabular data submissions for the potency and ADMET subchallenges did not pose any technical difficulties, the ligand pose subchallenge proved more complex. Due to technical constraints on storage and bandwidth in the Polaris backend, we could not store and evaluate submissions of full protein-ligand structures for each molecule for each participant. Instead, participants were required to submit a serialized RDKit molecule of the ligand only, pre-aligned to a reference structure (reference code provided in examples). While circumventing technical issues, this solution did rely on participants correctly aligning their results with the reference structure, which proved challenging for some submissions (see Challenge Outcomes).
 
-Participants were required to submit prior to the final leaderboard cutoff date with only their last submission counting towards the leaderboard. Additionally to be eligible for the final leaderboard participants were required to provide either a link to code detailing their methods, or a short written report. This done was to ensure that shared learnings could be derived from ranking of the modeling approaches while still allowing participants (particularly those in industry) to preserve proprietary code. 
+Participants were required to submit prior to the final leaderboard cutoff date, with only their last submission counting towards the leaderboard. Additionally, to be eligible for the final leaderboard, participants were required to provide either a link to code detailing their methods, or a short written report. This was done to ensure that shared learnings could be derived from ranking of the modeling approaches while still allowing participants (particularly those in industry) to preserve proprietary code. 
 
-Following the conclusion of the challenge, we also open-sourced the challenge data as presented to the participants on the Polaris platform and on Zenodo, allowing continued engagement with the challenge consistent with the way in which it was originally run.
+After the challenge concluded, we open-sourced the participant-facing challenge data on both the Polaris platform and Zenodo (https://zenodo.org/records/15582067), enabling continued engagement with the challenge in a manner consistent with its original execution.
 
 
 \subsection{Evaluation procedure}    
 
-Fair and robust prediction evaluation is critical to the success of a blind challenge.\cite{sampl6_2018} Evaluation of computational predictions for chemical matter in drug discovery is evolving, with a recent paper outlining best practices in this area\cite{ash_practically_2024}.  Robust evaluation is critical for building trust and to the adoption of \textit{in silico} methods. With this in mind, we aimed to develop a rigorous evaluation procedure that would fairly evaluate participants' submissions while remaining easily interpretable to outside participants.
+Fair and robust prediction evaluation is critical to the success of a blind challenge\cite{sampl6_2018}. Evaluation of computational predictions for chemical matter in drug discovery is evolving, with a recent paper outlining best practices in this area\cite{ash_practically_2024}. Robust evaluation is critical to build trust towards the adoption of \textit{in silico} methods. With this in mind, we aimed to develop a rigorous evaluation procedure that would fairly evaluate participants' submissions while remaining easily interpretable to wider audiences.
 
-Evaluation procedures and metrics were chosen for each sub-challenge based on the data distributions and appropriate treatment for the data modality. For each sub-challenge, multiple metrics were reported, with one metric chosen for primary ranking. Where a sub-challenge was comprised of multiple endpoints (SARS-CoV-2 Mpro pIC50 and MERS-CoV Mpro pIC50 for potency, MLM, HLM, KSOL, LogD and Perm for ADMET) the macro-averaged primary metric was used for ranking. For the potency and ADMET sub-challenges the Mean Absolute Error (MAE), Mean Squared Error (MSE), Pearson's $R$, Spearman's $\rho$, Kendall's $\tau$ and $R^2$ were reported. For the ligand pose sub-challenge, the success rate (number of poses with a ligand heavy atom RMSD below a threshold) at a threshold of 2Å was reported.
+Evaluation procedures and metrics were chosen for each subchallenge based on the data distributions and appropriate treatment of the data modality. For each subchallenge, multiple metrics were reported, with one metric chosen for primary ranking. For subchallenges comprised of multiple endpoints (SARS-CoV-2 Mpro pIC50 and MERS-CoV Mpro pIC50 for potency; MLM, HLM, KSOL, LogD and Perm for ADMET), the macro-averaged (averaged over all endpoints of the subchallenge) primary metric was used for ranking. For the potency and ADMET subchallenges, the mean absolute error (MAE), mean squared error (MSE), Pearson's $R$, Spearman's $\rho$, Kendall's $\tau$ and $R^2$ were reported. For the ligand pose subchallenge, success rate was reported as the number of poses with a ligand heavy atom root mean square deviation (RMSD) below a threshold of 2Å.
 
-For the potency sub-challenge, MAE was chosen as an appropriate flexible continuous metric for potency evaluation. Ranking of compounds by potency is often viewed as at least as important as absolute potency prediction. To this end we also conducted analyses of Kendall's $\tau$, assessing the ability of participants to rank-order potent molecules. 
+For the potency subchallenge, MAE was chosen as an appropriate, flexible, and continuous metric for potency evaluation. Ranking of compounds by potency is often viewed as at least as important as absolute potency prediction\cite{parks_gaieb_chiu_yang_shao_walters_jansen_mcgaughey_lewis_bembenek_et}. To this end, we conducted analyses of Kendall's $\tau$, assessing the ability of participants to rank-order potent molecules. 
 
-For the ADMET sub-challenge, MAE was chosen as the primary metric. Values for ADMET endpoints span a wide range with significant outliers. To alleviate the impact of outliers on the evaluation, endpoints that were not already in a base 10 logarithmic scale (LogD) were transformed to a base 10 logarithmic scale prior to evaluation with metrics (MAE, MSE, Pearson's $R$, Spearman's $\rho$, Kendall's $\tau$ and $R^2$). As some endpoints had values at exactly 0, a $ y=log_{10}(x + 1)$ transform was used. Overall the effect of this transformation was to log-normalize the endpoints prior to evaluation and minimize the impact of outliers on evaluation metrics (see SI Figure \ref{fgr:admet_endpoints}).
+ MAE was also chosen as the primary metric for the ADMET subchallenge. Values for ADMET endpoints span a wide range with significant outliers. To alleviate the impact of outliers on the evaluation, endpoints that were not already in a base 10 logarithmic scale (LogD) were transformed to a base 10 logarithmic scale prior to evaluation by chosen metrics (MAE, MSE, Pearson's $R$, Spearman's $\rho$, Kendall's $\tau$ and $R^2$). As some endpoints had values at exactly 0, a $ y=log_{10}(x + 1)$ transform was used. Overall, the effect of this transformation was to log-normalize the endpoints prior to evaluation and minimize the impact of outliers on evaluation metrics (see SI Figure \ref{fgr:admet_endpoints}).
 
-To robustly assess relative model performance, statistical hypothesis based comparison is required\cite{ash_practically_2024}. Due to stochasticity inherent in computational modeling ideally a population of models would be prepared for each submission via techniques such as cross validation and variation in model performance assessed via comparison of distributions of metrics. As this was judged to be too challenging for every participants to adhere to, populations of metrics were instead computed via bootstrapping\cite{efron_bootstrap_1979}. While this likely underestimates the variance in model performance and hence in metric populations, this approach allows calculation of estimated confidence intervals without large technical overhead. Following calculation of metric populations via bootstrapping, models were compared pairwise using Tukey's Honestly Significant Difference (HSD) test in accordance with a recent best practices paper. Leaderboard rankings results and associated statistical difference testing between models was communicated using Compact Letter Display (CLD)\cite{cld_algorithm_2004}, where models are ordered alphabetically by performance, where models sharing a letter are not statistically distinct. 
+To robustly assess \textit{relative} model performance, statistical hypothesis-based comparison is required\cite{ash_practically_2024}. Given the inherent stochasticity of computational modeling, each submission would ideally consist of a population of models, generated through techniques such as cross-validation, with performance variability assessed by comparing the distributions of evaluation metrics. Given the difficulty of requiring every participant to submit a population of models, metric distributions were instead estimated using bootstrapping\cite{efron_bootstrap_1979}. Although bootstrapping likely underestimates the variance in model performance, and hence in metric populations, the approach allows calculation of estimated confidence intervals without large technical overhead. Following calculation of metric population estimations via bootstrapping, models were compared pairwise using Tukey's Honestly Significant Difference (HSD) test in accordance with a recent best practices paper\cite{ash_practically_2024}. Leaderboard rankings results and associated statistical difference testing between models was communicated using Compact Letter Display (CLD)\cite{cld_algorithm_2004}, where models are ordered alphabetically by performance, sharing a letter designation when not statistically distinct as determined by Tukey's HSD test. 
 
-Importantly evaluation logic was open-sourced on GitHub at the following location: https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples, allowing participants to engage with the evaluation procedures and metrics while the challenge was ongoing. The evaluation logic was revised several times following feedback from participants including the exclusion of some duplicates that were missed in the initial preparation logic, and some racemic compound measurements that differed only in their extended stereochemistry (e.g 'and' or 'or' stereochemistry). Additionally some the ligand pose subchallenge required some additional pooling logic to deal with compounds for which more than one X-ray structure was available (e.g in different space groups). 
+Importantly, evaluation logic was open-sourced on GitHub (https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples), allowing participants to engage with the evaluation procedures and metrics while the challenge was ongoing. The evaluation logic was revised several times following feedback from participants, including the exclusion of some duplicates that were missed in the initial preparation logic, and some racemic compound measurements that differed only in their extended stereochemistry (e.g 'and' or 'or' stereochemistry). Additionally, some the ligand pose subchallenge required additional pooling logic to accommodate compounds with more than one X-ray structure (e.g in different crystallographic space groups). 
 
-We also provided baselines for each of the challenge modalities, meant to represent minimal effort approaches to modeling each respective endpoint and provided useful calibration for more complex approaches. For the potency sub-challenge, a linear model based on ECFP\cite{ecfp_2010} fingerprints was used, as trained on the training set. For the ADMET challenge a linear model of cLogP\cite{clogp_1999} was used for each endpoint as trained on the training set. For the poses sub-challenge, two baselines were prepared. A performance baseline similar to standard docking procedure was at ASAP was used, with cross-docking of each input molecule on the 5 closest available structures (ranked by RascalMCES\cite{raymond_rascal_2002, rdkit}) conducted using OpenEye POSIT\cite{kelley_posit_2015} and the highest scoring pose by ChemGauss4 score selected. A "blind docking" baseline was also prepared using GNINA\cite{mcnutt_gnina_2025}, with the docking box placed in the known Mpro binding site. Full code to run the baselines is available on GitHub at the following location: https://github.com/asapdiscovery/asap-polaris-challenge-baselines.
+We also provided baselines for each of the challenge modalities, meant to represent minimal-effort approaches to modeling each respective endpoint and to provide useful calibration for more complex approaches. For the potency subchallenge, a linear model based on extended connectivity fingerprints (ECFP)\cite{ecfp_2010} was used. For the ADMET challenge, a linear model of cLogP\cite{clogp_1999} was used for each endpoint. For the pose prediction subchallenge, two baselines were prepared. A performance baseline, similar to the standard docking procedure used at ASAP, was established by cross-docking each input molecule to the five closest available structures (ranked by RascalMCES\cite{raymond_rascal_2002, rdkit}) using OpenEye POSIT\cite{kelley_posit_2015}. The highest-scoring pose, based on the ChemGauss4\cite{oetk} score, was selected for evaluation. A "blind docking" (docking without a reference ligand bound) baseline was also prepared using GNINA\cite{mcnutt_gnina_2025}, with the docking box placed in the known Mpro binding site. All baseline models were trained on the same training sets provided to participants through Polaris. Full code to run the baselines is available on GitHub (https://github.com/asapdiscovery/asap-polaris-challenge-baselines).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% OUTCOMES
@@ -281,18 +348,17 @@ Participants performance in the potency prediction subchallenge varied by method
 
 
 % How well do people do in real terms %
-Top performing participants were able to predict potency with a high degree of accuracy (macro-average MAE of 0.509 ± 0.022 for the top entry). Top performing methodologies outperformed existing graph attentional neural networks employed at ASAP to predict affinities (12th best entry, CLD: \textit{h1*}), and would have likely greatly assisted compound prioritization within our leadopt campaign. Most participants were able to outperform the ECFP linear regression baseline (29th entry, CLD: \textit{v*}) Participants ability to rank compounds by potency was also generally strong, with the top three performing entries displaying Kendall's $\tau$  of ~0.6. As with the ability of these top performing models to predict absolute pIC50s to within approximately half a log unit, their ability to rank compounds by affinity was also impressive, considering that typical experimental potency measurement assays are expected to have an intrinsic variance of 0.2-0.4 log units.
+Top performing participants were able to predict potency with a high degree of accuracy (macro-average MAE of 0.509 ± 0.022 for the top entry). Top performing methodologies outperformed existing graph attentional neural networks employed at ASAP to predict affinities (12th best entry, CLD: \textit{h1*}), and would have likely greatly assisted compound prioritization within our leadopt campaign. Most participants were able to outperform the ECFP linear regression baseline (29th entry, CLD: \textit{v*}) Participants ability to rank compounds by potency was also generally strong, with the top three performing entries (by primary metric MAE) displaying Kendall's $\tau$ of approximately 0.63 (mean). Note that if ordered by Kendall's $\tau$ (as with any other metric) the exact ordering within the leaderboard will shift, with general trends maintained. As with the ability of these top performing models to predict absolute pIC50s to within approximately half a log unit, their ability to rank compounds by affinity was also impressive, considering that experimental potency measurement assays are expected to have reproduction variance of ~1 kcal/mol\cite{ross_maximal_2023}, with Kendall's $\tau$ between well curated measurements on the same set of compounds estimated at approximately 0.71 in a recent study of ChEMBL\cite{landrum_combining_2024}.
 
 % How did they do it %
-Analysis of top performing affinity prediction methods reveals a diverse set of deep learning approaches including the MolE and MolGPS graph neural network (GNN) foundation models. Other performant approaches included using pre-computed features from representation learning models combined either with traditional ML models (e.g SVMs) or further neural network layers. Many participants also employed ensembling to improve model performance.  Importantly many of the top performing models (including all of the top 3) employed some kind of pre-training step involving large numbers of unlabeled chemical structures outside of the challenge data to develop embeddings for downstream task prediction.
-
+Analysis of top performing affinity prediction methods reveals a diverse set of deep learning approaches including the MolE\cite{mendez-lucio_mole_2024} and MolGPS\cite{sypetkowski2024scalabilitygnnsmoleculargraphs} graph neural network (GNN) foundation models. Other performant approaches included using pre-computed features from representation learning models combined either with traditional ML models (e.g SVMs) or further neural network layers. Many participants also employed ensembling to improve model performance.  Importantly many of the top performing models (including all of the top 3) employed some kind of pre-training step involving large numbers of unlabeled chemical structures outside of the challenge data to develop embeddings for downstream task prediction. There were relatively few free energy calculation based entries overall compared to other challenges such as D3R\cite{parks_gaieb_chiu_yang_shao_walters_jansen_mcgaughey_lewis_bembenek_et}, likely hindered by both the multitask nature of the challenge (participants would need to first predict bound poses across two targets) and also the scale of the challenge (significant compute required to predict for > 500 compounds).
 
 \subsection{ADMET}
 
 In order to compare across ADMET endpoints the endpoint MAE was normalized to the dynamic range for each endpoint (here referred to as the relative absolute error, RAE). As with the potency subchallenge model's ability to rank order compounds in the ADMET subchallenge was assessed using Kendall's $\tau$. Participants performance varied across the endpoints with the solubility (KSOL) and LogD endpoints appearing the easiest to predict in relative terms. However when ranking ability is examined, the inability of even the best performing models to rank compounds by solubility is revealed, contrasting the excellent ranking performance of LogD models \ref{fgr:admet_endpoints}.  Poor performance on solubility ranking is attributable both to the dynamic range available in the training set (most compounds fall generally into the range considered soluble) and also the noted difficulty of predicting solubility prospectively across several benchmarks. Given good RAE performance and poor ranking ability for the KSOL endpoint, it is likely that models are memorizing the absolute solubility of the training set, performing closer in practice to a classification model. This is not necessarily an issue as in practice solubility is considered a quasi-classification problem where compounds are handled as being either soluble or insoluble by scientists. HLM and MLM performance was similar across challenge entries with these proving to be the hardest to predict in relative (RAE) terms. Ranking performance across HLM and MLM was generally strong with top performing models achieving Kendall's $\tau$ between 0.5 and 0.6. Generally, the best performing models overall were performant across all endpoints.
 
 % How well do people do in real terms %
-Models were also compared on an absolute basis (using MAE rather than RAE).Top perfoming models performed strongly basis and were able to predict solubility within ~XX, X. 
+Models were also compared on an absolute basis (using MAE rather than RAE).Top performing models performed strongly basis and were able to predict solubility within ~XX, X. 
 
 This would have made XX difference to XXX. Mention baselines XXXX
 
@@ -301,91 +367,97 @@ This would have made XX difference to XXX. Mention baselines XXXX
 Analysis of top performing models again revealed a diverse set of strategies employed by the participants. Three of the top 5 participants employed variations on GNN architectures (e.g D-MPNN with Chemprop), with the majority employing multi-task learning. Similar to the potency challenge top performing models managed to bring additional data to bear either by pretraining or via incorporating relevant endpoint data directly into training. Some participants (including the top performer) employed proprietary data  directly to assist them, while others used relevant public data (e.g ChEMBL).
 
 \begin{figure}
-    \includegraphics[scale=0.6]{04_figs_leaderboards/heatmaps.png}
-  \caption{Participants' models performed poorly on kinetic solubility predictions but strongly on stability, permeability and lipophilicity. Shown are (A) the relative absolute error of the normalized, predicted challenge endpoints, and (B) the Kendall's $\tau$ of the normalized, predicted challenge endpoints. The empty cell at entry \textit{w} MLM consisted of constant predicted values thus no ranking coefficient was calculated. Entries are ranked by their macro-averaged MAE over all endpoints}
+    \includegraphics[scale=0.6]{04_figs_leaderboards/mae.png}
+    \includegraphics[scale=0.6]{04_figs_leaderboards/rae.png}
+    \includegraphics[scale=0.6]{04_figs_leaderboards/ktau.png}
+  \caption{Participants' models performed poorly on kinetic solubility predictions but strongly on stability, permeability and lipophilicity. Shown are (A) the mean absolute error of the normalized, predicted challenge endpoints, (B), the relative absolute error of the normalized, predicted challenge endpoints, and (C) the Kendall's $\tau$ of the normalized, predicted challenge endpoints. The empty cell at entry \textit{w} MLM consisted of constant predicted values thus no ranking coefficient was calculated. Entries are ranked by their macro-averaged MAE over all endpoints}
   \label{fgr:heatmaps_admet}
 \end{figure}
 
 \subsection{Ligand Poses}
 
 \begin{figure}
-    \includegraphics[scale=0.15
+    \includegraphics[width=6in
     ]{04_figs_leaderboards/pose_comp.png}
-  \caption{Participants' generally performed better on the SARS-CoV-2 pose predictions with higher success rates, ligands predicted with an RMSD \textless2Å, and lower median RMSD predictions apart from one entry, \textit{m,} which shows the reverse prediction accuracy. Prediction RMSD distributions are shown for each entry split by the MERS-CoV and SARS-CoV-2 Mpro targets (left) with one entry removed u as the full distribution lies in the axis break. The success rate of each entry is shown (right) for the overall submission (grey) and the two targets separately to further highlight the difference in performance across the targets. The overall success rate was used to determine the final ranking of the submissions.}
+  \caption{Participants generally performed better on the SARS-CoV-2 pose predictions than the MERS-CoV predictions, as shown by higher success rates ( ligands predicted with an RMSD \textless2Å) and lower median RMSD predictions. Prediction RMSD distributions are shown for each entry split by the MERS-CoV and SARS-CoV-2 Mpro targets (left) with one entry removed (\textit{u}) as the full distribution lies in the axis break. The success rate of each entry is shown (right) for the overall submission (gray) and the two targets separately to further highlight the difference in performance across the targets. The overall success rate was used to determine the final ranking of the submissions.}
   \label{fgr:poses_leaderboard}
 \end{figure}
 
+Pose-prediction success was evaluated by measuring the fraction of ligands for which the predicted pose had \textless 2 Å symmetry-corrected heavy-atom RMSD from the crystallographic structure. Most participants had higher success rates for SARS-CoV-2 Mpro relative to MERS-CoV-Mpro, with an exception for \textit{m} (Figure \ref{fgr:poses_leaderboard}). When broken down by series (Figure \ref{fgr:poses_by_series_and_method} A,B) participants performed better on the lead series relative to the backup and miscellaneous series. A closer analysis shows that this trend is driven by the physics-based methods performing poorly on the backup series even when they do well on the lead series (SI Figure \ref{fgr:success_rate_lead_vs_backup}). Physics-based methods also showed the greatest discrepancy between the MERS-CoV and SARS-CoV-2 predictions, with a few of the methods showing dramatically better performance for one or the other target. Investigations of the root causes of this discrepancy is outside the scope of this work. 
 
 
-Pose-prediction success was evaluated by measuring the fraction of ligands for which the predicted pose had \textless 2 Å symmetry-corrected heavy-atom RMSD from the crystallographic structure. Overall cofolding methods were the most performant, including the top-performing model (\textit{a}, 82\% success rate), which far outperformed physics-based and deep-learning-based methods in this subchallenge (Fig. \ref{fgr:poses_leaderboard}). Overall most participants had higher success rates for SARS-CoV-2 Mpro relative to MERS-CoV-Mpro, 
-
-By contrast to cofolding models, all but one of the deep-learning-docking methods had low success rates (with many close to a 0\% success rate), with the best performing deep-learning model (\textit{i}) having a ~20\% success rate for MERS-CoV and a ~40\% success rate for SARS-CoV-2. Finally, the physics-based methods ranged from ~0\% to ~70\% success, with the best performing physics-based docking method (\textbf{d}) was the reference-based POSIT baseline used by the ASAP team, and the worst performing method was the non-reference-based method provided as a baseline (\textbf{r}). Physics-based methods also showed the greatest discrepancy between the MERS-CoV and SARS-CoV-2 predictions, with a few of the methods showing dramatically better performance for one or the other target. 
-
-Several of the top performing cofolding approaches employed finetuning on the SARS-CoV-2 Mpro structures in the training set. The up to \textgreater 80\% success rate of these models is overall impressive, and would have hugely benefited the lead optimization of the MERS-CoV Mpro series in particular, whose structural enablement came much later in the project. Results here indicate that fine-tuned cofolding models could have provided an accurate surrogate for MERS-CoV Mpro crystallography, with the caveat that a these were finetuned on large amounts of crystallography data already collected for the project.
+Overall, co-folding methods were the most performant, including the top-performing model (\textit{a}, 82\% success rate), which far outperformed physics-based and other deep-learning-based methods (e.g deep-learning docking) in this subchallenge (Figure \ref{fgr:poses_by_series_and_method} C,D). 
+In contrast to the co-folding models, all but one of the deep-learning docking methods had low success rates (with many close to 0\%), with the best performing deep-learning model (\textit{i}) having a 20\% success rate for MERS-CoV and a 40\% success rate for SARS-CoV-2 (Figure \ref{fgr:poses_leaderboard}). Finally, the physics-based methods ranged from 0\% to 70\% success. The best performing physics-based docking method (\textit{d}) was the reference-based POSIT baseline used by the ASAP team, and the worst performing method was the non-reference-based method provided as a baseline (\textit{r}).
 
 
 \begin{figure}
     \includegraphics[scale=1
     ]{04_figs_leaderboards/poses_by_series_and_method.png}
-  \caption{Participants performed better on the Lead Series than the Backup Series. (A) An empirical cumulative distribution function of the success rates of all the methods for the SARS-CoV-2 (left) or MERS-CoV (right) targets split into either the lead (blue), backup (yellow), or miscellaneous (green) ligand series. Success rates are higher for the lead series than for the backup or miscellaneous series. (B) An empirical cumulative distribution function of the success rates of all the methods for the SARS-CoV-2 (left) or MERS-CoV (right) targets split into their methods types, either co-folding (blue), deep-learning (orange), or physics-based (green). Co-folding methods perform the best, with most models exhibiting a \textgreater 80\% success rate, and deep-learning methods perform the worst, with physics-based methods exhibiting a broad range of success rates.}
+  \caption{Participants' performance depended on the target, series, and method type used, as shown by empirical cumulative distribution functions (ECDF) of the success rates. The ECDF for SARS-CoV-2 (A) and MERS-CoV (B) are  split into either the lead (blue), backup (yellow), or miscellaneous (green) ligand series. Success rates are higher for the lead series than for the backup or miscellaneous series. The ECDF for SARS-CoV-2 (C) and MERS-CoV (D) are  split into the method types, either co-folding (green), deep-learning (blue), or physics-based (red). Co-folding methods perform the best, with most models exhibiting a \textgreater 80\% success rate, and deep-learning methods perform the worst, with physics-based methods exhibiting a broad range of success rates.}
   \label{fgr:poses_by_series_and_method}
 \end{figure}
 
 
-Predictions for this subchallenge had a large number of outliers, including conspicuous number of outliers with an RMSD of ~50 Å. In part this stems from the design of the challenge as run through the Polaris API. As noted previously, participants uploaded just the ligand pose as aligned to a reference structure. This proved error prone for participants who's alignment to the reference structure was sometimes imperfect. This was complicated by the MERS-Mpro dimer For example some entries (\textit{j}, \textit{m}, \textit{q}) likely posed their entire series into the wrong chain, resulting in large errors. Additionally, for a single crystal structure in the test set, an alignment places the ligand in the wrong chain of the MERS-Mpro dimer. Some participants managed to identify this issue, while others did not, highlighting the difficulty of working with data from real biological experiments.
+Predictions for this subchallenge had a large number of outliers, including conspicuous number of outliers with an RMSD of ~50 Å. In part, this stems from the design of the challenge as run through the Polaris API. As noted previously, participants uploaded the ligand pose as aligned to a reference structure. This approach was susceptible to errors, particularly when participants’ alignments to the reference structure were imperfect. This was complicated by the MERS-CoV Mpro dimer: some entries (\textit{j}, \textit{m}, \textit{q}) likely posed their entire series into the wrong chain, resulting in large errors. Additionally, for a single crystal structure in the test set, an alignment places the ligand in the wrong chain of the MERS-Cov Mpro dimer. Some participants managed to identify this issue, while others did not, highlighting the difficulty of working with data from real biological experiments.
 
-
-
-
-
-When broken down by series (Figure \ref{fgr:poses_by_series_and_method}) participants performed better on the lead series relative to the backup series and miscellaneous series. XXXXX
-
-
-
-
+Several of the top performing co-folding approaches employed fine-tuning on the SARS-CoV-2 Mpro structures in the training set. The \textgreater 80\% success rate of these models is impressive, and would have benefited the lead optimization of the MERS-CoV Mpro series in particular, whose structural enablement came much later in the project. These results indicate that fine-tuned co-folding models could have provided an accurate surrogate for MERS-CoV Mpro crystallography, with the caveat that a these were finetuned on large amounts of crystallography data already collected for the project.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% LEARNINGS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Challenge Key Learnings}
 
-
-The ASAP-Polaris-OpenADMET blind challenge brought together participants from academia and industry around the globe to showcase cutting-edge approaches in computational methods for drug discovery.
+The ASAP-Polaris-OpenADMET blind challenge brought together participants from academia and industry around the globe to showcase cutting-edge approaches in computational methods for drug discovery on real world data. This represents a unique opportunity to gather lessons to inform future blind challenges as well as some general overarching conclusions about the performance of methodologies employed.
 
 
 \subsection{Key takeaways}
 
 % key takeaways from participants’ results
-Key takeaways from the challenge include strong, across-the-board performance of deep learning approaches, with these methods coming first in all three sub-challenges. In the pose prediction sub-challenge, cofolding and cofolding-insipired methods, such as AlphaFold~\cite{} and Boltz~\cite{}, significantly outperformed traditional physics-based approaches, with further improvements observed through fine-tuning. Similarly, in potency prediction, large pretrained deep learning models, especially those based on transformer and graph neural network (GNNs) architectures, were the best performers. For ADMET endpoint prediction, multi-task GNNs proved to be the best approach overall, benefiting from the ability to incorporate auxiliary data.Notably, the top-performing approaches across the three sub-challenges leveraged either additional auxiliary data (public or proprietary) or pre-training outside of the datasets provided by ASAP, highlighting the critical role of data availability in model performance and underscores the need of continuing to expand open and FAIR dataset collection for public benefit. These findings reinforce the value of open initiatives, such as blind challenges, for providing diverse datasets to benchmark and improve existing deep learning models and establishing best practices for predictive methods in drug discovery. Cutting edge open-science projects that may make strides in alleviating this data shortage include OpenADMET focused around ADMET properties, OpenBind focused around collecting high-throughput structural data. There has also 
+Key takeaways from the challenge include strong, across-the-board performance of neural network approaches, with these methods coming first in all three subchallenges. In the pose prediction subchallenge, cofolding and cofolding-inspired methods, such as AlphaFold-like ~\cite{abramson_2024_alphafold} and Boltz-like~\cite{wohlwend_2024_boltz-1, passaro_2025_boltz-2} architectures, significantly outperformed traditional physics-based approaches, with further improvements observed through fine-tuning. Similarly, in potency prediction, large pretrained deep learning models, especially those based on transformer and graph neural network (GNNs) architectures, were the best performers. For ADMET endpoint prediction, multi-task GNNs proved to be the best approach overall, benefiting from the ability to incorporate auxiliary data. 
+
+Notably, the top-performing approaches across the three subchallenges leveraged either auxiliary data (public or proprietary) or pre-training beyond the datasets provided by ASAP. This highlights the critical role of data availability in model performance and underscores the importance of continuing to expand open and FAIR datasets for public benefit. These findings reinforce the value of open initiatives, such as blind challenges, in providing diverse datasets for benchmarking and improving models, while also helping to establish best practices for predictive methods in drug discovery. Cutting-edge, open-science projects that may make strides in alleviating this data shortage include OpenADMET focused around ADMET properties and OpenBind focused around collecting protein structural data in high-throughput.
 
 % Takeaways from challenge execution: Data preparation, Polaris platform, and evaluation metrics
-The challenge also offered insight into strategies to successfully execute future public blind challenges. In particular, the detailed data preparation process was essential to prevent data leakage while maintaining chemical diversity, which is essential for preserving real-world model applicability. Dividing the data using a temporal split in the ADMET and potency sub-challenges successfully simulated a prospective drug discovery pipeline, further proving the practical relevance of the results.
-Polaris proved to be an ideal platform to host a large number of participants, offering robust feedback mechanisms and enabling streamlined evaluation via a set of standardized metrics. In particular, the Python API provided an intuitive and scalable interface for handling large datasets, which facilitated broad participation. On the other hand, the choice of evaluation metrics allowed for consistent model assessment across different sub-challenges and prediction modalities [??].
+The challenge also offered insight into strategies to successfully execute future public blind challenges. In particular, the detailed data preparation process was essential to prevent data leakage while maintaining chemical diversity, preserving real-world model applicability. Dividing the data using a temporal split in the ADMET and potency subchallenges successfully simulated a prospective drug discovery pipeline, further proving the practical relevance of the results.
+Polaris proved to be an ideal platform to host a large number of participants, offering robust feedback mechanisms and enabling streamlined evaluation via a set of standardized metrics. In particular, the Python API provided an intuitive and scalable interface for handling large datasets, which facilitated broad participation. 
 
 
 
-\subsection{Lessons & possible improvements}
-[things that weren’t done well and areas of improvement for future challenges]
+\subsection{Lessons learned}
+The blind challenge discussed in this manuscript was designed to be a reflection of a real-world drug discovery program. With that comes intrinsic disorder that is associated with such programs, largely arising from the influx of different sources of data, different types of data, and time-dependent iteration/renewal of data. \textbf{Data preparation} for this challenge was key in ensuring smooth operation of the challenge; although a lot of effort was spent to this purpose there were still several issues found by participants throughout the runtime of the challenge. The authors note several recommendations.
+\begin{enumerate}
+    \item \textit{Data leakage and stereochemistry}: check carefully for train-test overlap as it can occur in many places. Particularly spend time balancing between stereo-isomers by making sure that there is an optimal distribution between AND/OR-stereochemistry mixtures. Care must be taken when working with compound registrations systems as compounds that were assayed as unresolved enantiomers may also be registered under different IDs. Crystal structures may be registered under a racemic mixture SMILES, but the resolved compound pose will typically be that of the most potent enantiomer.
+    \item \textit{Data splitting}: it may not be possible to split your data points using conventional strategies. In the case of this challenge, ultimately the decision was made to settle on an \textit{index-based, time-biased} split as a compromise between several competing needs (minimal overlap, minimal cross-challenge overlap, time-wise splitting). 
+    \item \textit{Data quality}: experimental data may not always be of adequate quality. Although physical activity cliffs may exist, in some cases an average measurement across replicates may be influenced by one or multiple outliers. In rare cases, dose-response curve fitting may be faulty which introduces noise into the dataset. For all these cases it is generally better to remove these data points. 
+    \item \textit{Data complexity}: imbalanced distribution of the target labels can be disadvantageous to proper model training. To this end it is recommended to ensure that the distributions are overlapping between the training and test sets, and conversion to logarithmic scale should be considered as appropriate. Furthermore, assays' dynamic ranges may have been adjusted over time which can result in changing magnitudes at which measurements may be assigned as out-of-bounds. Vigilant record-keeping is helpful in this scenario, but in cases where out-of-bounds measurements were not re-measured in the new dynamic range these points may be discarded by finding their modifier (i.e., $<$, $<=$, $>=$, $>$ as opposed to $=$).
+\end{enumerate}
 
+Given adequate data preparation, \textbf{engaging the community} is required to actually run this challenge. To gather participants it is recommended to use an accessible \textbf{challenge platform} and closely \textbf{interact with the community} through social media. The authors note several recommendations.
+\begin{enumerate}
+    \item \textit{Programmable access to the challenge}: Programmatic API-based access to the challenge was essential to running a blind challenge successfully at this scale. Manual handling of author submissions would have proved prohibitively labor intensive and error-prone. Polaris is not the only platform that allows for this kind of challenge to be run programmatically with Kaggle proving to be a popular alternative (used successfully in the Belka challenge\cite{quigley2024belka}) with the limitation that data must fit traditional ML formats (e.g would not support protein structures). While we did run periodic evaluations (3 total) for the participants, a possible improvement for future blind challenges could be to run the evaluation in-situ following user submission to the Polaris API (as is done on Kaggle), allowing the participants to gather immediate feedback as to the performance of their models. This real-time evaluation can provide more immediate feedback as well as identify submission issues (e.g alignment issues in ligand posing subchallenge). However, this must be balanced against the possibility of exploitation of the challenge evaluation function through repeated submissions and technical feasibility of running live evaluation.
+    \item \textit{Use multiple sources of communication}: Our strategy of communicating with participants though multiple channels appeared successful. Discord proved a helpful platform in this regard, creating a community forum for us to engage with participants and for participants to engage with each other (see Figure: \ref{fgr:timeline_engagement}). Office hours also provided a valuable chance for participants to engage with experimentalists. The use of multiple communication channels and a social media campaign across platforms (e.g email, LinkedIn, BlueSky, X) helped build a high-quality participant base across academia and industry.
+    
+    \item \textit{Communicating a scope} 
+    \item \textit{Transparency} % source data, eval, leaderboards and backend code etc all open source
+    \item \textit{Be open to feedback}  Throughout the process of running the challenge we received feedback on the challenge format as well as specific sub-areas (in particular the evaluation logic). This allowed us to detect and correct errors in data preparation and think more carefully about choices made in the challenge design. Expert participants can help detect issues that you may have missed or be unaware of. Long term this can contribute to a virtuous cycle of knowledge sharing in which blind challenge preparation and execution can improve over time. 
+    \item \textit{Evaluation is critical} Robust evaluation of the challenge was a challenging problem given the multiple sub-challenges and the endpoints within each one. Choice of metrics and evaluation procedure has to balance interpretability against rigorous evaluation. In our case this necessitated some tradeoffs, particular for the ADMET sub-challenge. Macro-averaged MAE was chosen as a. In ge
+    
+    \item \textit{Continue the conversation} Continued engagement with. Anecdotally, many 
+\end{enumerate}
 
-Data preperation
-polaris side:
-no user-side eval
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Data:
-% Check very carefully for test-train overlap in your data package, it can hide almost anywhere
-% You may not be able to split your compounds using conventional strategies. Eventually we settled on an index based time-biased split as a compromise between several competing needs (minimal overlap, minimal cross-challenge overlap, time wise splitting).
-% Nasty hidden bits of data, for example
-%  several activity cliffs were found along the way
-% Several compounds registered with the same smiles were known to be unresolved enantiomers
-% Extended stereochemistry is not well understood and not always reliable
-% Several X ray structures were run on enantiomeric mixtures, these however are actually resolved in the structure themselves to the most potent compound
-% Some thresholds and assay standards can shift over time, e.g Bienta HLM / MLM sensitivity was not properly marked at start. Good record keeping is essential.
 
-% Data distributions can be 
+
 % Community:
 % Should we have been clearer on the fact that we were running a lead-opt focused challenge? Several people investigated and commented on the focused nature of the challenge.
+
 % Poses has been technically challenging, lack of tactile feedback makes people debugging submissions hard
+
+% office hours
+
+% discord, email, socials
+
+% no user-side eval, especially for poses
 
 
 
@@ -403,6 +475,8 @@ no user-side eval
 % A strong community should foster interdisciplinary collaboration and ensure that lessons learnt are distilled throughout the scientific community.
 % In addition to the above, and in an ideal scenario (OpenADMET foreshadowing), a competition is regularly run and updated based on the lessons learnt from previous editions. No one gets it right on the first try and benchmarks should evolve alongside methods.
 % All of the above is true for CASP. They didn't just evaluate some methods on blind data, but iteratively refined the Evaluation Logic (e.g. proposed measures of model performance, as well as protein similarity), implemented that evaluation logic in open source software (i.e. OpenStructure), and proactively engaged with the community through papers and conferences to distill the results. I strongly believe this is the key reason the field of structural biology is so mature compared to other domains. CASP has laid and continues to lay the foundation for other benchmarking studies, such as Plinder and Runs 'N Poses.
+
+
 % On the design of this specific competition:
 % Within the context of the above, here are some things about this competition I think we did well:
 % Unbiased evaluation: Performance on the test set was only measured three times.
@@ -427,17 +501,23 @@ no user-side eval
 \subsection{The future of blind challenges}
 
 % Outlook for future challenges
-We believe that blind challenges are the best way to robustly assess models and drive forward computational methods in drug discovery. This is validated by step-change improvements in model performance after community investment in blind challenges both in related fields such as computer vision (XX and XX), natural language processing (XX and XX) and abstract reasoning (XX and XX), and in those relevant to drug discovery such as computational structure prediction (CASP). Infrastructure like Polaris can help make blind challenges more routine, consistent and with operate with lower overhead. John and Jamie to fill out: XXXXX
+We believe that blind challenges are the best way to robustly assess models and drive forward computational methods in drug discovery. This is validated by step-change improvements in model performance after community investment in blind challenges both in related fields such as computer vision (ILSVRC, COCO, ISIC, Vesuvius Challenge) and natural language processing (GLUE, SuperGlue,  SQuAD), and in those relevant to drug discovery such as computational structure prediction (CASP)\cite{casp13_2019, casp14_2021, casp15_2023}. For blind challenges to become a successful measuring stick around which a field gathers, several pillars need to be addressed. Firstly, high quality realistic datasets need to be used or generated, representing a realistic use case on which models would be expected to perform in production. Secondly, challenges need to be "industrialized" in execution, with high quality infrastructure, allowing blind challenges to be more routine, consistent, and operate with lower overhead. Finally, an iterative cycle of improvement must be fostered, in which community engagement drives iterative improvement in model performance and subsequent. Open-source code and datasets are critical to this endeavor, allowing continual engagement and retrospective performance analysis around which the community can gather. We hope that successful adoption of these principles can help drive
+
+John and Jamie to expand: XXXXX
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The "Acknowledgement" section can be given in all manuscript
-%% classes.  This should be given within the "acknowledgement"
-%% environment, which will make the correct section or running title.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{acknowledgement}
 
-The authors would like to thank XXXX. 
+The authors would like to thank the participants, as well as supporting staff at institutions involved (Open Molecular Software foundation, Valence Labs, UCSF).
+
+
+Research reported in this publication was partially supported by the Advanced Research Projects Agency for Health (ARPA-H) under [Award Recipient must identify Project Title here], and Award Number 1AY1AX000035-01. The ARPA-H award provided XX\% of total costs and total XX \% [Award Recipient must identify percentage of total award costs and total award dollars]. The contents are those of the author. They may not reflect the policies of the Department of Health and Human Services or the U.S. government. The content is solely the responsibility of the authors and does not necessarily represent the official views of the Advanced Research Projects Agency for Health.\
+
+
+Research reported here was supported in part by NIAID of the National Institutes of Health under award number U19AI171399.
+
+The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
 
 \end{acknowledgement}
 

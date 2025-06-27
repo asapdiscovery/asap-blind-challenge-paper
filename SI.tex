@@ -1,12 +1,331 @@
-\documentclass{article}
+\documentclass[journal=jcim,manuscript=article]{achemso}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[left=1.5cm, right=1cm]{geometry}
-% Title and author
-\title{Supplementary Materials}
-\author{Author Name}
+
+
+\makeatletter
+\let\oldminipage\minipage
+\let\oldendminipage\endminipage
+\renewenvironment{minipage}[1]{}{}
+\g@addto@macro{\maketitle}{\let\minipage\oldminipage\let\endminipage\oldendminipage}
+\makeatother
+
+
+% fix some achemso rubbish
+\renewcommand{\titlesize}{\normalsize}
+\renewcommand{\affilsize}{\footnotesize	}
+\renewcommand{\authorsize}{\footnotesize	}
+\renewcommand{\emailsize}{\footnotesize}
+
+%% Main manuscript contributors
+\author{Hugo MacDermott-Opeskin}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Jenke Scheen}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Cas Wognum}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+\author{Joshua, T Horton}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Devany West}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Alexander Matthew Payne}
+\affiliation{Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+\altaffiliation{Tri-Institutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+\author{Maria A Castellanos}
+\affiliation{Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+\author{Sean Colby}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+
+%% ASAP %%
+\author{Edward Griffen}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{David Cousins}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{Jessica Stacey}
+\affiliation{MedChemica Consultancy Ltd, Macclesfield, UK}
+\author{Jasmin Cara Aschenbrenner}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Daren Fearon}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Blake Balcomb}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Peter Marples}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Charles W.E. Tomlinson}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Ryan Lithgo}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Max Winokan}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Haim Barr}
+\affiliation{Weizmann Institute of Science, Rehovot, IL}
+\author{Noa Lahav}
+\affiliation{Weizmann Institute of Science, Rehovot, IL}
+\author{Gwendolyn Fate}
+\affiliation{Thames Pharma Partners, USA}
+\author{Bruce Lefker}
+\affiliation{Thames Pharma Partners, USA}
+\author{Ralph Robinson}
+\affiliation{Thames Pharma Partners, USA}
+\author{Tamas Szommer}
+\affiliation{Centre for Medicines Discovery, Oxford, UK}
+\author{Nick Lynch}
+\affiliation{Curlew Research, UK}
+
+
+%% OpenADMET
+\author{Ryan Renslow}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Mallory Tollefson}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+\author{Cynthia Xu}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+
+% Valence 
+\author{Jonny Hsu}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+\author{Julien St-Laurent}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+\author{Honore Etsmoberg}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+\author{Lu Zhu}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+\author{Andrew Quirke}
+\affiliation{Valence Labs, Montréal, Québec, Canada}
+\altaffiliation{Recursion Pharmaceuticals, Salt Lake City, UT, USA}
+
+%% Participants
+% All participants excluding the authors already listed in the main document
+\author{Mohamed Iliyas Abdul Haleem}
+
+\author{Irfan Alibay}
+\affiliation{Open Molecular Software Foundation, Davis CA, USA}
+
+\author{Gunjan Baid}
+\affiliation{Inductive Bio, New York, NY, USA}
+
+\author{Benjamin Birnbaum}
+\affiliation{Inductive Bio, New York, NY, USA}
+
+\author{Kevin Bishop}
+\affiliation{Ontario Institute for Cancer Research, Toronto, ON, Canada}
+
+\author{Hugo Bohorquez}
+\affiliation{Ontario Institute for Cancer Research, Toronto, ON, Canada}
+
+\author{Ashmita Bose}
+\affiliation{University of Luxembourg, Luxembourg City, Luxembourg}
+
+\author{C.J. Brown}
+\affiliation{Alpha29, LLC}
+
+\author{Jackson Burns}
+\affiliation{MIT, Cambridge, MA, USA}
+
+\author{Lianjin Cai}
+\affiliation{University of Pittsburgh, Pittsburgh, PA, USA}
+
+\author{Ruel Cedeno}
+\affiliation{Novalix, 67000 Strasbourg, France}
+
+\author{Vladimir Chupakhin}
+\affiliation{Simulations Plus, Research Triangle Park, NC, USA}
+
+\author{Finlay Clark}
+\affiliation{Newcastle University, Newcastle, UK}
+
+\author{Daniel Cole}
+\affiliation{Newcastle University, Newcastle, UK}
+
+\author{Carles Corbi-Verge}
+\affiliation{Recursion, Salt Lake City, UT, USA}
+
+\author{Muhammad Danial}
+\affiliation{Shenzhen Institute of Synthetic Biology, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, Shenzhen 518055, China}
+
+\author{Alec Davi}
+\affiliation{Owkin, New York, NY, USA}
+
+\author{Wim Dehaen}
+\affiliation{UCT Prague, Prague, Czech Republic}
+
+\author{Niklas Piet Doering}
+\affiliation{Freie Universität Berlin, Berlin, Germany}
+
+\author{Alexis Dougha}
+\affiliation{BFA, Université Paris Cité, CNRS UMR 8251, Inserm U1133, 75013 Paris, France}
+
+\author{Bryce Eakin}
+\affiliation{Inductive Bio, New York, NY, USA}
+
+\author{Anatol Ehrlich}
+\affiliation{University of Vienna, Vienna, Austria}
+
+\author{Rokas Elijosius} % [Pending check]
+\affiliation{University of Cambridge, Cambridge, UK}
+
+\author{Jozef Fülöp}
+\affiliation{UCT Prague, Prague, Czech Republic}
+
+\author{Anthony Gitter}
+\affiliation{University of Wisconsin-Madison, Madison, WI, USA}
+\altaffiliation{Morgridge Institute for Research, Madison, WI, USA}
+
+\author{Yaowen Gu}
+\affiliation{New York University, New York, NY, USA}
+
+\author{Teresa Head-Gordon}
+\affiliation{University of California, Berkeley, CA, USA}
+
+\author{Ellena Jiang}
+\affiliation{University of Vienna, Vienna, Austria}
+
+\author{Benjamin Kaminow}
+\affiliation{Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+
+\author{Sina Khosravi}
+\affiliation{Mashhad University of Medical Sciences, Mashhad, Khorasan Razavi, Iran}
+
+\author{Asma Feriel Khoualdi} % [Pending check]
+\affiliation{Newcastle University, Newcastle, UK}
+
+\author{Eelke Bart Lenselink}
+\affiliation{Galapagos NV, 2800 Mechelen, Belgium}
+
+\author{Zhirong Liu}
+\affiliation{Peking University, Beijing, China}
+
+\author{Yue Liu}
+\affiliation{University of Pittsburgh, Pittsburgh, PA, USA}
+
+\author{Sijie Liu}
+\affiliation{Freie Universität Berlin, Berlin, Germany}
+
+\author{Yizhou Ma}
+\affiliation{QuantaBricks, Newark, NJ, USA}
+
+\author{Patrick Maher}
+\affiliation{Inductive Bio, New York, NY, USA}
+
+\author{Imke Mayer} % [Pending Check]
+\affiliation{Owkin, New York, NY, USA}
+
+\author{Antonia Mey}
+\affiliation{University of Edinburgh, Edinburgh, Scotland, UK}
+
+\author{Floriane Montanari} % [Pending check]
+\affiliation{Owkin, New York, NY, USA}
+
+\author{Taoyu Niu}
+\affiliation{University of Pittsburgh, Pittsburgh, PA, USA}
+
+\author{Ryusei Ogino}
+\affiliation{Japan Tobacco INC., Minato City, Tokyo, Japan}
+
+\author{Ashok Palaniappan}
+\affiliation{SASTRA Deemed University, Thanjavur, Tamil Nadu 613401, India}
+
+\author{Xiaolin Pan}
+\affiliation{New York University, New York, NY, USA}
+
+\author{Auro Patnaik}
+\affiliation{University of Edinburgh, Edinburgh, Scotland, UK}
+
+\author{Long-Hung Pham}
+\affiliation{Imperial College London, London, UK}
+
+\author{Luis Pinto}
+\affiliation{Independent Researcher}
+
+\author{Justin Purnomo}
+\affiliation{University of California, Berkeley, CA, USA}
+
+\author{Alexander Rich}
+\affiliation{Inductive Bio, New York, NY, USA}
+
+\author{Lars Schaaf}
+\affiliation{University of Cambridge, Cambridge, UK}
+
+\author{Christoph Schran}
+\affiliation{University of Cambridge, Cambridge, UK}
+
+\author{Satya Pratik Srivastava}
+\affiliation{Shiv Nadar University, Greater Noida, Uttar Pradesh, India}
+
+\author{Kunyang Sun}
+\affiliation{University of California, Berkeley, CA, USA}
+
+\author{Zhaoxi Sun}
+\affiliation{Shenzhen University of Advanced Technology, Shenzhen, China}
+
+\author{Valerij Talagayev}
+\affiliation{Freie Universität Berlin, Berlin, Germany}
+
+\author{Balamurugan Thirukonda Subramanian Balakrishnan}
+
+\author{Alexandre Tkatchenko}
+\affiliation{University of Luxembourg, Luxembourg City, Luxembourg}
+
+\author{Wojtek Treyde}
+\affiliation{University of Oxford, Oxford, UK}
+
+\author{Austin Tripp}
+\affiliation{Valence Labs, Quebec, Canada}
+
+\author{Nopsinth Vithayapalert}
+\affiliation{VISTEC, Pa Yup Nai, Thailand}
+
+\author{Yingze Wang}
+\affiliation{University of California, Berkeley, CA, USA}
+
+\author{Azmine Toushik Wasi}
+\affiliation{Shahjalal University of Science and Technology, Sylhet, Bangladesh}
+
+\author{Steffen Wedig}
+\affiliation{University of Cambridge, Cambridge, UK}
+
+\author{Bofei Xu}
+\affiliation{Peking University, Beijing, China}
+
+\author{Weijun Zhou}
+\affiliation{New York University, New York, NY, USA}
+
+
+
+%% ASAP PIs
+\author{Frank von Delft}
+\affiliation{Diamond Light Source, Didcot, UK}
+\author{Alpha Lee}
+\affiliation{PostEra, Cambridge, MA, USA}
+\author{Karla Kirkegaard}
+\affiliation{Stanford University School of Medicine: Stanford, CA, US}
+\author{Peter Sjö}
+\affiliation{Drugs for Neglected Diseases initiative: Geneva, Genève, CH}
+
+%% OpenADMET PIs
+\author{Sri Kosuri} 
+\affiliation{Octant Inc: Emeryville, CA, US}
+
+\author{James S. Fraser}
+\affiliation{University of California San Francisco, San Francisco, CA, USA}
+
+%% John as final as PI across both
+\author{John D. Chodera}
+\affiliation{Memorial Sloan Kettering Cancer Center, New York, NY, USA}
+
+\email{*jenke.scheen@omsf.io}
+
+
+% Title 
+\title{Supplementary Materials: A Computational Community Blind Challenge on Pan-Coronavirus Drug Discovery Data}
 
 \begin{document}
 
@@ -25,139 +344,4 @@
   \label{fgr:success_rate_lead_vs_backup}
 \end{figure}
 
-% this is the general idea - needs to be redone and cleaned up:
-% \begin{table}[]
-% \begin{tabular}{lll}
-% First name(s) & Last name & Affiliation \\ \hline
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Azmine Toushik} & {\color[HTML]{434343} Wasi} & {\color[HTML]{434343} Shahjalal University of Science and Technology, Bangladesh} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Long-Hung} & {\color[HTML]{434343} Pham} & {\color[HTML]{434343} Department of Chemistry, Imperial College London} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Bofei} & {\color[HTML]{434343} Xu} & {\color[HTML]{434343} College of Chemistry and Molecular Engineering, Peking University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Lars L} & {\color[HTML]{434343} Schaaf} & {\color[HTML]{434343} University of Cambridge} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Wim} & {\color[HTML]{434343} Dehaen} & {\color[HTML]{434343} UCT Prague} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Yizhou} & {\color[HTML]{434343} Ma} & {\color[HTML]{434343} QuantaBricks} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Alexis} & {\color[HTML]{434343} Dougha} & {\color[HTML]{434343} BFA, Université Paris Cité, CNRS UMR 8251, Inserm U1133, 75013 Paris, France} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Eelke Bart} & {\color[HTML]{434343} Lenselink} & {\color[HTML]{434343} tbd - currently at Galapagos but this is my last week.} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Ruel} & {\color[HTML]{434343} Cedeno} & {\color[HTML]{434343} Novalix} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Finlay} & {\color[HTML]{434343} Clark} & {\color[HTML]{434343} Newcastle University} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Benjamin} & {\color[HTML]{434343} Kaminow} & {\color[HTML]{434343} Memorial Sloan Kettering Cancer Center} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Daniel} & {\color[HTML]{434343} Cole} & {\color[HTML]{434343} Newcastle University} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Luis} & {\color[HTML]{434343} Pinto} & {\color[HTML]{434343} Independent Researcher} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Anthony} & {\color[HTML]{434343} Gitter} & {\color[HTML]{434343} University of Wisconsin-Madison; Morgridge Institute for Research} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Zhaoxi} & {\color[HTML]{434343} Sun} & {\color[HTML]{434343} Shenzhen University of Advanced Technology} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Zhirong} & {\color[HTML]{434343} Liu} & {\color[HTML]{434343} College of Chemistry and Molecular Engineering, Peking University} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Ashok} & {\color[HTML]{434343} Palaniappan} & {\color[HTML]{434343} School of Chemical and Biotechnology, SASTRA Deemed University, Thanjavur 613401 India} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Christoph} & {\color[HTML]{434343} Schran} & {\color[HTML]{434343} University of Cambridge} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} ryusei} & {\color[HTML]{434343} ogino} & {\color[HTML]{434343} JAPAN TOBACCO INC.} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Nopsinth} & {\color[HTML]{434343} Vithayapalert} & {\color[HTML]{434343} VISTEC} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Xiaolin} & {\color[HTML]{434343} Pan} & {\color[HTML]{434343} New York University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Xiaolin} & {\color[HTML]{434343} Pan} & {\color[HTML]{434343} New York University} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Satya Pratik} & {\color[HTML]{434343} Srivastava} & {\color[HTML]{434343} Shiv Nadar University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Jackson} & {\color[HTML]{434343} Burns} & {\color[HTML]{434343} MIT} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Sina} & {\color[HTML]{434343} Khosravi} & {\color[HTML]{434343} Department of Medicinal Chemistry, School of Pharmacy, Mashhad University of Medical Sciences, Mashhad, Iran} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Asma Feriel} & {\color[HTML]{434343} Khoualdi} & {\color[HTML]{434343} Newcastle University} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Rokas} & {\color[HTML]{434343} Elijosius} & {\color[HTML]{434343} University of Cambridge} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Steffen} & {\color[HTML]{434343} Wedig} & {\color[HTML]{434343} University of Cambridge} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Vladimir} & {\color[HTML]{434343} Chupakhin} & {\color[HTML]{434343} Simulations Plus} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Kunyang} & {\color[HTML]{434343} Sun} & {\color[HTML]{434343} Kenneth S. Pitzer Theory Center and Department of Chemistry, University of California, Berkeley, CA, 94720 USA} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Justin} & {\color[HTML]{434343} Purnomo} & {\color[HTML]{434343} University of California, Berkeley} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Muhammad} & {\color[HTML]{434343} Danial} & {\color[HTML]{434343} KeyLaboratory of Quantitative Synthetic Biology, Shenzhen Institute of Synthetic Biology, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,  Shenzhen 518055, China} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Yingze} & {\color[HTML]{434343} Wang} & {\color[HTML]{434343} Pitzer Center for Theoretical Chemistry,Department of Chemistry, University of California, Berkeley,California 94720, United States} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Teresa} & {\color[HTML]{434343} Head-Gordon} & {\color[HTML]{434343} University of California, Berkeley} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Mohamed Iliyas} & {\color[HTML]{434343} Abdul Haleem} & {\color[HTML]{434343} Antiviral ADMET 2025} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Wojtek} & {\color[HTML]{434343} Treyde} & {\color[HTML]{434343} Chemistry Research Laboratory, University of Oxford} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Jozef} & {\color[HTML]{434343} Fülöp} & {\color[HTML]{434343} UCT Prague} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} C.J.} & {\color[HTML]{434343} Brown} & {\color[HTML]{434343} Alpha29, LLC} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Balamurugan} & {\color[HTML]{434343} Thirukonda Subramanian Balakrishnan} & {\color[HTML]{434343} Data Science Student at DataScientest Institute, Certified by Sorbonne University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Austin} & {\color[HTML]{434343} Tripp} & {\color[HTML]{434343} Valence Labs} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Valerij} & {\color[HTML]{434343} Talagayev} & {\color[HTML]{434343} Freie Universität Berlin} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Carles} & {\color[HTML]{434343} Corbi-Verge} & {\color[HTML]{434343} Recursion} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Yaowen} & {\color[HTML]{434343} Gu} & {\color[HTML]{434343} Department of Chemistry, New York University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Alec} & {\color[HTML]{434343} Davi} & {\color[HTML]{434343} Owkin} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Floriane} & {\color[HTML]{434343} Montanari} & {\color[HTML]{434343} Owkin} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Imke} & {\color[HTML]{434343} Mayer} & {\color[HTML]{434343} Owkin} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Antonia} & {\color[HTML]{434343} Mey} & {\color[HTML]{434343} University of Edinburgh} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Irfan} & {\color[HTML]{434343} Alibay} & {\color[HTML]{434343} Open Free Energy, the Open Molecular Software Foundation} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Weijun} & {\color[HTML]{434343} Zhou} & {\color[HTML]{434343} New York University} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Sijie} & {\color[HTML]{434343} Liu} & {\color[HTML]{434343} Freie Universität Berlin} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Niklas Piet} & {\color[HTML]{434343} Doering} & {\color[HTML]{434343} Freie Universität Berlin, Department of Biology, Chemistry and Pharmacy, Institute of Pharmacy, Molecular Design Group, Königin-Luisestr. 2 + 4, 14195 Berlin, Germany} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Auro} & {\color[HTML]{434343} Patnaik} & {\color[HTML]{434343} University of Edinburgh} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Lars} & {\color[HTML]{434343} Schaaf} & {\color[HTML]{434343} University of Cambridge} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Alexander} & {\color[HTML]{434343} Rich} & {\color[HTML]{434343} Inductive Bio} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Bryce} & {\color[HTML]{434343} Eakin} & {\color[HTML]{434343} Inductive Bio} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Patrick} & {\color[HTML]{434343} Maher} & {\color[HTML]{434343} Inductive Bio} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Gunjan} & {\color[HTML]{434343} Baid} & {\color[HTML]{434343} Inductive Bio} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Benjamin} & {\color[HTML]{434343} Birnbaum} & {\color[HTML]{434343} Inductive Bio} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Yue} & {\color[HTML]{434343} Liu} & {\color[HTML]{434343} University of Pittsburgh} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Kevin} & {\color[HTML]{434343} Bishop} & {\color[HTML]{434343} Ontario Institute for Cancer Research (Hugo Bohorquez, Laurent Hoffer were additional participants))} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Ashmita} & {\color[HTML]{434343} Bose} & {\color[HTML]{434343} University of Luxembourg} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Alexandre} & {\color[HTML]{434343} Tkatchenko} & {\color[HTML]{434343} Faculty of science technology and medicine, university of luxembourg} \\
-% \rowcolor[HTML]{F8F9FA} 
-% {\color[HTML]{434343} Anatol} & {\color[HTML]{434343} Ehrlich} & {\color[HTML]{434343} University of Vienna} \\
-% \rowcolor[HTML]{FFFFFF} 
-% {\color[HTML]{434343} Ellena} & {\color[HTML]{434343} Jiang} & {\color[HTML]{434343} University of Vienna}
-% \end{tabular}
-% \caption{SI 1: Author affiliations of participants that contributed to the blind challenge.}
-% \end{table}
 \end{document}

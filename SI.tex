@@ -1,4 +1,4 @@
-\documentclass[journal=jcim,manuscript=article]{achemso}
+\documentclass[journal=jcim,manuscript=suppinfo]{achemso}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -325,7 +325,7 @@
 
 
 % Title 
-\title{Supplementary Materials: A Computational Community Blind Challenge on Pan-Coronavirus Drug Discovery Data}
+\title{A Computational Community Blind Challenge on Pan-Coronavirus Drug Discovery Data}
 
 \begin{document}
 
@@ -338,15 +338,19 @@
   \label{fgr:admet_endpoints}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.75]{SI/fig_S2_poses_by_series/success_rate_lead_vs_backup_comparison.png}
-  \caption{Success rates of each type of model on the lead series vs backup series. This shows that the worse performance on the backup series comes mainly from the physics-based models, with the co-folding models doing well on both and the deep-learning doing poorly on both.}
-  \label{fgr:success_rate_lead_vs_backup}
-\end{figure}
+
 
 \begin{figure}
     \includegraphics[scale=0.75]{SI/fig_S3_ktau_potency_leaderboard/SI_potency_leaderboards.png}
-  \caption{Participants performed diversely on potency predictions. A) leaderboard of the potency subchallenge as each entry's category (DL=Deep Learning, ML=Machine Learning, PB=Physics-Based, GP=Gaussian Process, LR=Linear Regression) and split by target; MERS-CoV Mpro in yellow, SARS-CoV-2 Mpro in green). B) replication of panel A but using the ranking metric \textit{kendall's $\tau$ }. Baseline models as deployed by the organizers are marked with asterisks. Each entry is annotated with its statistical ranking by the Compact Letter Display (CLD) system\cite{cld_algorithm_2004}.}
+  \caption{Participants performed diversely on potency predictions. A) leaderboard of the potency subchallenge as each entry's category (DL=Deep Learning, ML=Machine Learning, PB=Physics-Based, GP=Gaussian Process, LR=Linear Regression) and split by target; MERS-CoV Mpro in yellow, SARS-CoV-2 Mpro in green). B) replication of panel A but using the ranking metric \textit{kendall's $\tau$ }. Baseline models as deployed by the organizers are marked with asterisks. Each entry is annotated with its statistical ranking by the Compact Letter Display (CLD) system.}
+  \label{fgr:ktau_supp_potency}
+\end{figure}
+
+
+
+\begin{figure}
+    \includegraphics[scale=0.75]{SI/fig_S2_poses_by_series/success_rate_lead_vs_backup_comparison.png}
+  \caption{Success rates of each type of model on the lead series vs backup series. This shows that the worse performance on the backup series comes mainly from the physics-based models, with the co-folding models doing well on both and the deep-learning doing poorly on both.}
   \label{fgr:success_rate_lead_vs_backup}
 \end{figure}
 

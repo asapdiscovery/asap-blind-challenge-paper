@@ -406,7 +406,7 @@ Running a computational blind challenge requires significant community engagemen
 The dataset used in the challenge primarily consisted of real-world lead optimization (leadopt) data from the ASAP pan-coronavirus Mpro program, selected to mirror challenges faced in real-world lead optimization campaigns. To this end, three \textit{subchallenges} were chosen that reflected experimental processes common to drug discovery: 1) crystallographic ligand pose prediction, 2) biochemical potency prediction, and 3) ADMET endpoint prediction (Figure~\ref{fgr:datasets_overview}). Each of these subchallenges contained one or more endpoints (e.g MERS-CoV and SARS-CoV-2 Mpro potency for the potency subchallenge). The data in this challenge spans a single discovery campaign and is thus not necessarily intended to train generalizable models, but rather to act as an accurate evaluation of model performance on a real-world scenario.
 
 \begin{figure}
-    \includegraphics[scale=0.5]{01_figs_introduction/datasets_overview.png}
+    \includegraphics[scale=0.5]{fig1_dataset_splits/reproduce_figure/datasets_overview.png}
   \caption{\textbf{The ASAP-Polaris-OpenADMET blind challenge assessed predictive performance on lead optimization data temporally split into training and test sets.} 
   Final ML-ready training sets are shown as blue bars and test sets as orange bars with the total number of measurements annotated at the top of each bar. For the ligand posing subchallenge, \textbf{M} and \textbf{S} signify \textit{MERS-CoV Mpro} and \textit{SARS-CoV-2 Mpro} respectively. }
   \label{fgr:datasets_overview}
@@ -437,13 +437,13 @@ As part of our public outreach efforts, we ran an extensive social media campaig
 
 
 \begin{figure}
-    \includegraphics[scale=0.58]{02_figs_community/community_progress_and_timeline.png}
+    \includegraphics[scale=0.58]{fig2_timeline/Figure.png}
   \caption{\textbf{The ASAP-Polaris-OpenADMET Challenge spanned two months and saw a high volume of participation.} A) Community engagement for the blind challenge across its runtime with several milestones annotated with corresponding dates. Shown are the number of messages sent by participants over the Discord server in blue and the number of predictions submitted by participants to the Polaris platform in orange. Dotted lines indicate the virtual office hours that were hosted on 2025-01-30 and 2025-01-31 and the preclinical candidate disclosure at ACS on 2025-03-25; after this date all test set data was published. B) Schematic illustration of the timeline for the ASAP-Polaris-OpenADMET Challenge, with dates annotated.}
   \label{fgr:timeline_engagement}
 \end{figure}
 
 \begin{figure}
-    \includegraphics[scale=0.9]{03_figs_data_preparation/subchallenge_physprops_with_scaffolds.png}
+    \includegraphics[scale=0.9]{fig3_chemical_series_overview/Figure.png}
   \caption{\textbf{Chemical matter used in each subchallenge spans multiple chemical series of multiple chemical property characteristics.} These plots show the lead series (blue) that progressed to preclinical candidate nomination, a backup series (yellow) and any miscellanous compounds (green). The different subchallenges that the compounds were involved in are annotated on the three panels (A/B/C). The right-hand-side panels show the SARS-CoV-2 Mpro (red) and MERS-CoV Mpro (cream) with ASAP-0017445 X-ray structures in the system dimer form with chain B semi-opaque (D) and a blowup of the active site of both targets with each X-ray pose of ASAP-0017445 shown with contacts colored per corresponding target (E). }
   \label{fgr:physprops_scaffolds}
 \end{figure}
@@ -584,7 +584,7 @@ Outcomes across the subchallenges were evaluated through analysis of final leade
 
 
 \begin{figure}
-    \includegraphics[scale=0.6]{04_figs_leaderboards/potency_leaderboards_and_progressions.png}
+    \includegraphics[scale=0.6]{fig4_potency_leaderboard/Figure.png}
   \caption{\textbf{Participants performed strongly on ligand potency predictions for SARS-CoV-2 and MERS-CoV Mpro.} A) the Tanimoto (ECFP fingerprint) distance to the training set of compounds in the test set split by the period the compound was actioned for synthesis. B) participants' performance on the test set of each collection of compounds (as split in A) in mean absolute error of pIC50. An additional split by target (MERS-CoV Mpro in yellow, SARS-CoV-2 Mpro in green) is shown. C) leaderboard of the potency subchallenge as each entry's category (DL=Deep Learning, ML=Machine Learning, PB=Physics-Based, GP=Gaussian Process, LR=Linear Regression) and split by target in the same colors as B). Baseline models as deployed by the organizers are marked with asterisks. Each entry is annotated with its statistical ranking by the Compact Letter Display (CLD) system\cite{cld_algorithm_2004}.}
   \label{fgr:potency_leaderboards}
 \end{figure}
@@ -623,7 +623,7 @@ Analysis of top performing models again revealed a diverse set of strategies emp
 
 \begin{figure}
     \includegraphics[width=6in
-    ]{04_figs_leaderboards/pose_comp.png}
+    ]{fig6_poses_leaderboard/Figure.png}
   \caption{\textbf{Pose prediction performance was generally higher on SARS-CoV-2 Mpro than MERS-CoV Mpro.}
  \emph{Left:} Predicted ligand pose RMSD box-and-whiskers plots with quartiles are shown for each entry split by the MERS-CoV and SARS-CoV-2 Mpro targets, with one entry removed (\textit{u}) as the full distribution lies in the axis break. These \emph{Right:} The success rate (fraction of ligand poses predicted with RMSD \textless2Å) of each entry is shown for the overall submission (gray) and the two targets separately to further highlight the difference in performance across the targets. The overall success rate was used to determine the final ranking of the submissions. The dashed vertical line indicates the mean success rate of the top-performing entry.}
   \label{fgr:poses_leaderboard}
@@ -636,7 +636,7 @@ Overall, co-folding methods performed best, including the top-performing model (
 
 \begin{figure}
     \includegraphics[scale=1
-    ]{04_figs_leaderboards/poses_by_series_and_method.png}
+    ]{fig7_poses_success_CDFs/Figure.png}
   \caption{\textbf{Participants' ligand pose prediction accuracy depended on the target, series, and method type used, as shown by empirical cumulative distribution functions (ECDF) of the success rates.} The ECDF for SARS-CoV-2 (A) and MERS-CoV (B) pose prediction success are  split into either the lead (blue), backup (yellow), or miscellaneous (green) ligand series. Pose prediction success rates are higher for the lead series than for the backup or miscellaneous series. The ECDF for SARS-CoV-2 (C) and MERS-CoV (D) are  split into the method types, either co-folding (green), deep-learning (blue), or physics-based (red). Co-folding methods perform the best, with most models exhibiting a \textgreater 80\% success rate, and deep-learning methods perform the worst, with physics-based methods exhibiting a broad range of success rates. See figure \ref{fgr:poses_leaderboard} for the leaderboard of this subchallenge.}
   \label{fgr:poses_by_series_and_method}
 \end{figure}
@@ -720,9 +720,9 @@ As this effort matures, OpenADMET aims to a cadence of staged data generation of
 The OpenADMET effort plans to clearly communicate data release timelines, paired with transparent challenge infrastructure, open source evaluation logic, and best practice conformant data deposition workflows into terminal FAIR repositories to ensure its work is aligned with both community trust and methodological rigor.
 
 \section{Data Availability}
-The code for generating this manuscript including all source data for generating figures and the data behind them is available at XXX. All code and data that was used to prepare and set up the blind challenge data is available at XXX. The Polaris platform source code is available under an Apache 2.0 License at https://github.com/polaris-hub/polaris. Examples of submission workflows during the blind challenge are available at https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples. The evaluation logic that was used for ranking participants' entries for this challenge are available at XXX. 
+A fully interactive discovery pipeline that points to all experimental outputs of ASAP Discovery is located at \href{https://asapdiscovery.org/pipeline/}{the Consortium's website}. The code for generating this manuscript including all source data for generating figures and the data behind them is available at XXX. All code and data that was used to prepare and set up the blind challenge data is available at XXX. The Polaris platform source code is available in a \href{https://github.com/polaris-hub/polaris}{code repository under an Apache 2.0 License}. Examples of submission workflows during the blind challenge are available on a \href{https://github.com/asapdiscovery/asap-polaris-blind-challenge-examples}{code repository under an MIT license}. The evaluation logic that was used for ranking participants' entries for this challenge are available at XXX. 
 
-Finally, to access the data of this blind challenge, a blog post was published to act as a guide for those interested: XXX
+Finally, to access the data of this blind challenge \textit{post-hoc}, a \href{https://blog.omsf.io/how-to-access-the-asap-discovery-x-polarishub-x-openadmet-challenge-data/}{blog post was published} to act as a guide for those interested.
 
 \section{Acknowledgments}
 

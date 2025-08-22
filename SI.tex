@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[left=1.5cm, right=1cm]{geometry}
+\usepackage{multirow}
 
 
 \makeatletter
@@ -366,5 +367,22 @@
   \caption{Distributions of dynamic ranges of biochemical potencies shown as Empirical Cumulative Distribution Functions (ECDFs). pIC50 values were fit from dose-response measurements as obtained by a Fluorescence Resonance Energy Transfer assay split between train set (blue) and test set (orange) and targets SARS-CoV-2 Mpro (left) and MERS-CoV Mpro (right). }
   \label{fgr:admet_endpoints}
 \end{figure}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\newpage
+\begin{table}[]
+\begin{tabular}{lllll}
+ &  &  & \multicolumn{2}{c}{Biochemical pIC50} \\ \cline{4-5} 
+ & Isomer & Compound & SARS-CoV-2 Mpro & MERS-CoV Mpro \\
+\multirow{2}{*}{\includegraphics[scale=0.2]{SI/table_S1_stereoisomer_activity_cliffs/methyl.png}} & R & ASAP-0000733 & 7.87 & 5.97 \\
+ & S & ASAP-0000240 & 5.62 & \textless 4.00 \\ \\ \\ \\ 
+ \\ \\ \\ 
+\multirow{2}{*}{\includegraphics[scale=0.2]{SI/table_S1_stereoisomer_activity_cliffs/benzyl.png}} & R & ASAP-0000526 & 7.30 & 5.21 \\
+ & S & ASAP-0000435 & 5.81 & \textless 4.00
+\end{tabular}
+\caption{Examples of large biochemical potency differences between chirally separated enantiomers of compounds involved in this blind challenge. Shown are the racemic structures with corresponding R/S enantiomers and their biochemical potencies in both SARS-CoV-2 Mpro and MERS-CoV Mpro. Values noted as \textless 4.0 are below the dynamic range of the assay.}
+\end{table}
 
 \end{document}

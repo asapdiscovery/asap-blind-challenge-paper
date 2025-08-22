@@ -29,8 +29,9 @@ def evaluate_potency_predictions(
         refs = y_true[target_label]
         pred = y_pred[target_label]
 
-        refs, pred = mask_nan(refs, pred)
         refs, pred = mask_flagged(refs, pred, "potency", target_label)
+        refs, pred = mask_nan(refs, pred)
+
 
         for i, ind in enumerate(
             bootstrapping_sampler(refs.shape[0], n_bootstrap_samples)

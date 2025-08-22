@@ -31,8 +31,9 @@ def evaluate_admet_predictions(
         refs = y_true[target_label]
         pred = y_pred[target_label]
 
-        refs, pred = mask_nan(refs, pred)
         refs, pred = mask_flagged(refs, pred, "admet", target_label)
+        refs, pred = mask_nan(refs, pred)
+
 
         if target_label not in logscale_endpts:
             refs = clip_and_log_transform(refs)

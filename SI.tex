@@ -6,6 +6,7 @@
 \usepackage[left=1.5cm, right=1cm]{geometry}
 \usepackage{multirow}
 \usepackage{csvsimple}
+\usepackage{rotating}
 
 
 \makeatletter
@@ -439,11 +440,11 @@
 \caption{Examples of large biochemical potency differences between chirally separated enantiomers of compounds involved in this blind challenge. Shown are the racemic structures with corresponding R/S enantiomers and their biochemical potencies in both SARS-CoV-2 Mpro and MERS-CoV Mpro. Values noted as \textless 4.0 are below the dynamic range of the assay.}
 \end{table}
 
-\begin{table}
+\begin{sidewaystable}
 \tiny
 
 \csvautotabular[respect and, respect underscore]{SI/admet_user_info.csv}
-\end{table}
+\end{sidewaystable}
 
 
 \end{document}

@@ -478,15 +478,150 @@
 %   late after line=\\\hline]{SI/ligand_pose_SI_table.csv}{}{\Username & \CLD & \MAE & \Report}%
 % \caption{Performance of participants in the ligand pose subchallenge with associated links to participant reports. Raw versions of this data is available at the paper GitHub repo: https://github.com/asapdiscovery/asap-blind-challenge-paper}
 % \end{sidewaystable}
+
+\newpage
+
+{\tiny
+
+\begin{longtable}{|p{2cm}|c|c|c|p{4cm}|p{6cm}|}
+\hline
+\multicolumn{6}{|c|}{\small{\textbf{Potency}}} \\
+\hline
+\textbf{Username} & \textbf{CLD} & \textbf{Type} & \textbf{MAE} & \textbf{Github} & \textbf{Report} \\
+
+\hline
+\endfirsthead
+
+\hline
+\multicolumn{6}{|c|}{\small{\textbf{Potency}}} \\
+\hline
+\textbf{Username} & \textbf{CLD} & \textbf{Type} & \textbf{MAE} & \textbf{Github} & \textbf{Report} \\
+\hline
+\endhead
+
+\endfoot
+
+oscar-mendez-lucio & a & DL & 0.509 ± 0.022 & \url{https://github.com/recursionpharma/mole_public} & \url{https://www.nature.com/articles/s41467-024-53751-y} \\
+\hline
+
+ccorbi & b & DL & 0.516 ± 0.022 & \url{https://github.com/exscientia/molflux} & \url{https://gist.github.com/shug3502/f0fe74f443d1d82fa73bf869148c7cdc} \\
+\hline
+
+siat353 & b & ML & 0.517 ± 0.021 & & \url{https://drive.google.com/file/d/1axeFC3gxcVGKPDwVZO2Tyi7W9Mz2ztLN/view?usp=drive_link} \\
+\hline
+
+xubf & bc & DL & 0.518 ± 0.022 & & \url{https://docs.google.com/document/d/14NaFXBsCToKCyRTV2EiV7dTxBsBz_9R8ZWkTkLiovQk} \\
+\hline
+
+alx-dga & c & ML & 0.522 ± 0.022 & \url{https://github.com/alexisdougha/polaris-submission} & \url{https://drive.google.com/file/d/1jUPsolAyrgZ-mIxi5AAMYKBigjniNVCf/view?usp=sharing} \\
+\hline
+
+luispintoc & d & DL & 0.532 ± 0.022 & & \url{https://docs.google.com/document/d/124EmRMeXIZlXGmYmErVVvb5DLWnU_A_dXgwH43TAvvk/edit?usp=sharing} \\
+\hline
+
+ryan-deepmirror & e & DL & 0.539 ± 0.021 & \url{https://github.com/ryan-deepmirror} & \url{https://docs.google.com/document/d/1zFNA_CKfGRGbdzFXX8dOhkLIOFBybe6pn3H7X8qd6nY/edit?usp=sharing} \\
+\hline
+
+rced & f & ML & 0.544 ± 0.022 & \url{https://github.com/cedenoruel/sub_antiviral25} & \url{https://github.com/cedenoruel/sub_antiviral25} \\
+\hline
+
+dodo & f & ML & 0.548 ± 0.022 & \url{https://github.com/fulopjoz/polaris-antiviral-submission/blob/master/potency-submission/potency-prediction-pipeline.ipynb} & \url{https://tinyurl.com/dodo-potency} \\
+\hline
+
+sina & g & ML & 0.554 ± 0.021 & & \url{https://github.com/khosravisina/Polaris-potency-report/tree/main} \\
+\hline
+
+gufan1998 & g & DL & 0.555 ± 0.022 & \url{https://github.com/gu-yaowen/GGAP-CPI} & \url{https://docs.google.com/document/d/1B2I1pnHB32qy_CmbFXAWgNfNG-4qn_C2/edit?usp=sharing&ouid=108734974888240888578&rtpof=true&sd=true} \\
+\hline
+
+wim0 & h & DL & 0.561 ± 0.021 & \url{https://github.com/dehaenw/polaris-baseline} & \url{https://molecular.beauty/blog/2025/03/13/polaris.html} \\
+\hline
+
+austint & h & GP & 0.564 ± 0.021 & \url{https://github.com/AustinT/asap-2025-challenge-gp} & \url{https://github.com/AustinT/asap-2025-challenge-gp} \\
+\hline
+
+jacksonburns & i & DL & 0.575 ± 0.022 & \url{https://github.com/JacksonBurns/neural-pairwise-regression/blob/main/notebooks/polaris_asap.ipynb} & \url{https://github.com/JacksonBurns/neural-pairwise-regression/blob/main/meta} \\
+\hline
+
+caithmac & j & GP & 0.600 ± 0.021 & & \url{https://github.com/caithmac/polaris_potency_mpro} \\
+\hline
+
+talagayev & j & DL & 0.602 ± 0.024 & \url{https://github.com/talagayev/polaris_antiviral_challenge} & \url{https://github.com/talagayev/polaris_antiviral_challenge/blob/main/ADMET_MPNN/report.md} \\
+\hline
+
+steffen-wedig & k & DL & 0.656 ± 0.028 & & \url{https://drive.google.com/file/d/1ZkPnvkzNaEYe45fLpGZyNUvU9rnM_oDq/view?usp=sharing} \\
+\hline
+
+wolberlab & k & ML & 0.660 ± 0.024 & \url{https://github.com/talagayev/polaris_antiviral_challenge} & \url{https://github.com/talagayev/polaris_antiviral_challenge/blob/main/Preliminary_prediction_protocol_2nd_submission.md} \\
+\hline
+
+nnnty & l & PB & 0.676 ± 0.025 & & \url{https://github.com/yul533/polaris-antiviral-challenge/blob/main/potency%20prediction%202} \\
+\hline
+
+azminewasi & m & ML & 0.687 ± 0.022 & \url{https://github.com/azminewasi/polaris-antiviral-competition} & \url{https://github.com/azminewasi/polaris-antiviral-competition/blob/main/antiviral-potency-2025/report/report.pdf} \\
+\hline
+
+yul533 & n & PB & 0.697 ± 0.025 & & \url{https://github.com/yul533/polaris-antiviral-challenge/blob/main/potency%20prediction} \\
+\hline
+
+wtrd & o & ML & 0.702 ± 0.026 & \url{https://github.com/duartegroup/asap-polaris-challenge} & \url{https://docs.google.com/document/d/1464wiMCWdncfWoMIpL4WHI31qOECqeBq0CEhwiAAfW4/edit?usp=sharing} \\
+\hline
+
+bkaminow & p* & DL & 0.712 ± 0.024 & \url{https://github.com/kaminow/asap-polaris-challenge-potency-2025} & \url{https://github.com/kaminow/asap-polaris-challenge-potency-2025/blob/main/report.md} \\
+\hline
+
+kysun & q & DL & 0.748 ± 0.026 & \url{https://github.com/KSUN63/Polaris-Submission} & \url{https://docs.google.com/document/d/1YVxVi-zMc7rX0TrvO7SIZfkQ-uUx3ChdtV4oovq80ts/edit?usp=sharing} \\
+\hline
+
+longhung25 & r & DL & 0.764 ± 0.029 & & \url{https://docs.google.com/document/d/140sY_Rx_YPEnaw4TbuvuuaO4rq1F29TvNHh779Me5Jc/edit?usp=sharing} \\
+\hline
+
+danialshah353 & s & LR & 0.772 ± 0.026 & & \url{https://drive.google.com/file/d/1xrmgHAFcyRDAGTQTEeHn83GxuQBfm4cr/view?usp=sharing} \\
+\hline
+
+hbaumann & t & GP & 0.822 ± 0.027 & & \url{https://github.com/meyresearch/polaris_challenge/tree/main} \\
+\hline
+
+kbishop & u & PB & 0.853 ± 0.030 & & \url{https://docs.google.com/document/d/1exokoYptuwRllvnQp_S42ZW3ecDc6zdk/edit?usp=sharing&ouid=111958341380201258210&rtpof=true&sd=true} \\
+\hline
+
+hmacdope & u* & LR & 0.857 ± 0.027 & & \url{https://github.com/asapdiscovery/asap-polaris-challenge-baselines} \\
+\hline
+
+kriegegroup & v & DL & 0.990 ± 0.032 & \url{https://github.com/aehrlich1/polaris-challenge-2025} & \url{https://docs.google.com/document/d/1mth0dsjh6ir_qEQt-3CW7YsZHR1LK2jF6rsguKbd89M/edit?usp=sharing} \\
+\hline
+
+geosmina & w & DL & 1.053 ± 0.056 & & \url{https://github.com/jaaisu/polaris_challenge/blob/main/README.md} \\
+\hline
+
+ialibay & x & GP & 1.146 ± 0.039 & \url{https://github.com/meyresearch/polaris_challenge/tree/potency} & \url{https://github.com/meyresearch/polaris_challenge/tree/main} \\
+
+
+
+\caption{Performance of participants in the potency subchallenge with associated links to participant reports. Raw versions of this data is available at the paper GitHub repo: \url{https://github.com/asapdiscovery/asap-blind-challenge-paper}}
+\label{tab:admet_results}
+\end{longtable}
+}
+
+
+\newpage
+
+
+
+
 \newpage
 {\tiny
 
 \begin{longtable}{|p{2cm}|c|c|c|p{4cm}|p{6cm}|}
 \hline
+\multicolumn{6}{|c|}{\small{\textbf{ADMET}}} \\
+\hline
 \textbf{Username} & \textbf{CLD} & \textbf{Type} & \textbf{MAE} & \textbf{Github} & \textbf{Report} \\
 \hline
 \endfirsthead
 
+\hline
+\multicolumn{6}{|c|}{\small{\textbf{ADMET}}} \\
 \hline
 \textbf{Username} & \textbf{CLD} & \textbf{Type} & \textbf{MAE} & \textbf{Github} & \textbf{Report} \\
 \hline
@@ -658,7 +793,6 @@ kriegegroup & D & DL & 1.338 ± 0.020 & \url{https://github.com/aehrlich1/polari
 
 
 \newpage
-
 
 
 
